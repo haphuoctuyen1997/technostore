@@ -17,3 +17,4 @@ product:
   default: "default"
   see_detail: "See detail!"
 top_order: 5
+admin_user_perpage: 10

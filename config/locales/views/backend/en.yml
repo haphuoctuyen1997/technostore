@@ -21,3 +21,43 @@ en:
       slide_bar:
         dashboard: "Dashboard"
         charts: "Charts"
+    users:
+      form:
+        edit_user: "Edit User"
+        form_edit_user: "Form Edit User"
+        create_user: "Create User"
+        form_create_user: "Form Create User"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        address: "Address"
+        role: "Role"
+        phone: "Phone"
+        submit: "Submit"
+        reset: "Reset"
+      table:
+        list_user: "List Users"
+        id: "Id"
+        name: "Name"
+        email: "Email"
+        address: "Address"
+        phone: "Phone"
+        role: "Role"
+        function: "Function"
+        edit: "Edit"
+        delete: "Delete"
+        you_sure: "You sure ?"
+      create:
+        user_create: "User Created"
+        user_create_fail: "Create Failed"
+      update:
+        user_updated: "User Updated"
+        update_user_fail: "You can not update this user"
+      destroy:
+        user_deleted: "User Deleted"
+        user_delete_fail: "Delete Failed"
+      user:
+        edit: "Edit"
+        delete: "Delete"
+        you_sure: "You sure ?"

@@ -4,7 +4,7 @@ class Suggest < ApplicationRecord
 
   validates :user_id, presence: true
   validates :category_id, presence: true
-  validates :name, presence: true, length: {maximum: Settings.max.name}
+  validates :name, presence: true, length: {maximum: Settings.maximum.name}
   validates :description, presence: true,
    length: {maximum: Settings.maximum.description}
 
