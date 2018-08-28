@@ -5,6 +5,7 @@ maximum:
   address: 255
   email: 255
   phone: 20
+per_user: 10
 minimum:
   pass: 6
 sessions:

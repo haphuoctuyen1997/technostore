@@ -2,6 +2,8 @@ class User < ApplicationRecord
   attr_accessor :remember_token
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  before_save{email.downcase!}
+
   has_many :comments, dependent: :destroy
   has_many :rattings, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -9,15 +11,15 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.maximum.name}
   validates :address, presence: true,
-   length: {maximum: Settings.maximum.address}
+    length: {maximum: Settings.maximum.address}
   validates :phone, presence: true, length: {maximum: Settings.maximum.phone}
   validates :email, presence: true, length: {maximum: Settings.maximum.email},
-   format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
+    format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.minimum.pass},
-   allow_nil: true
+    allow_nil: true
+
   has_secure_password
 
-  before_save{email.downcase!}
   enum role: {member: 0, admin: 1}
 
   def authenticated? remember_token
