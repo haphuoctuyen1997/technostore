@@ -7,4 +7,13 @@ en:
   signup: "signup"
   alt:
     logo: "logo"
-
+  hello: "Hello world"
+  sessions:
+      invalid_email_password: "Invalid email/password combination"
+      new:
+        please_sign_in: "Please Sign In"
+      form:
+        remember_me: "Remember Me"
+        login: "Login"
+        email: "Email"
+        password: "Password"
