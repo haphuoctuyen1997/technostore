@@ -22,7 +22,11 @@ class User < ApplicationRecord
 
   enum role: {member: 0, admin: 1}
 
-  scope :by_create_at, ->{order created_at: :DESC}
+  scope :newest, ->{order created_at: :DESC}
+  scope :search, -> key do
+    where "name LIKE ? OR email LIKE ?", "%#{key}%", "%#{key}%"
+  end
+
   def authenticated? remember_token
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
