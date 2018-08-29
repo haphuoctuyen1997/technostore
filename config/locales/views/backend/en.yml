@@ -1,8 +1,5 @@
 en:
   backend:
-    static_page:
-      index:
-        please_login: "Please Login"
     shared:
       header:
         startmin: "Startmin"
@@ -11,6 +8,8 @@ en:
         user_profile: "User Profile"
         settings: "Settting"
         logout: "Logout"
+        login: "Login"
+        user: "User"
       dashboard:
         dashboard: "Dashboard"
         new_comment: "New Comments!"
@@ -22,9 +21,3 @@ en:
       slide_bar:
         dashboard: "Dashboard"
         charts: "Charts"
-    sessions:
-      new:
-        please_sign_in: "Please Sign In"
-      form:
-        remember_me: "Remember Me"
-        login: "Login"

@@ -1,9 +1,11 @@
-max:
+maximum:
   name: 50
   content: 140
   description: 1000
   address: 255
   email: 255
   phone: 20
-min:
+minimum:
   pass: 6
+sessions:
+  is_remember: "1"
