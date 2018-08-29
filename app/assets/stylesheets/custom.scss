@@ -4,6 +4,9 @@
 section {
   overflow: auto;
 }
+.btn{
+  margin-top: 10px;
+}
 textarea {
   resize: vertical;
 }
@@ -67,4 +70,3 @@ footer ul li {
 }
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: 222}
 .mainmenu-area .nav > li > a:focus {color: #000}
-
