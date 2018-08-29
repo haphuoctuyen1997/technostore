@@ -1,0 +1,21 @@
+en:
+  backend:
+    shared:
+      header:
+        startmin: "Startmin"
+        toggle_navigation: "Toggle navigation"
+        website: "Website"
+        user_profile: "User Profile"
+        settings: "Settting"
+        logout: "Logout"
+      dashboard:
+        dashboard: "Dashboard"
+        new_comment: "New Comments!"
+        new_task: "New Tasks!"
+        new_order: "New Orders!"
+        view_details: "View Details"
+        support_ticket: "Support Tickets!"
+        area_chart: "Area Chart"
+      slide_bar:
+        dashboard: "Dashboard"
+        charts: "Charts"
