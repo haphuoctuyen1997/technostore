@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_091945) do
     t.integer "quantity"
     t.text "description"
     t.string "picture"
+    t.integer "number_of_order", default: 0
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

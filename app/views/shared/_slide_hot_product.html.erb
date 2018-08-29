@@ -1,0 +1,36 @@
+<div id="hot-product" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#hot-product" data-slide-to="0" class="active"></li>
+    <% @top_order_products.count.times do |n| %>
+      <li data-target="#hot-product" data-slide-to="#{n}"></li>
+    <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+       <%= image_tag "default.png", alt: t("product.default") %>
+    </div>
+
+    <div class="item">
+      <% @top_order_products.each do |product| %>
+        <%= image_tag "product.picture", alt: product.picture %>
+        <div class="carousel-caption">
+          <h3><%= product.name %></h3>
+          <%= link_to t("product.see_detail"), "#" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#hot-product" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only"><%= t "slide.previous" %></span>
+  </a>
+  <a class="right carousel-control" href="#hot-product" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only"><%= t "slide.next" %></span>
+  </a>
+</div>

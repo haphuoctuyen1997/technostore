@@ -9,3 +9,10 @@ minimum:
   pass: 6
 sessions:
   is_remember: "1"
+slide:
+  previous: "Previous"
+  next: "Next"
+product:
+  default: "default"
+  see_detail: "See detail!"
+top_order: 5

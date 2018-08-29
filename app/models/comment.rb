@@ -4,5 +4,6 @@ class Comment < ApplicationRecord
 
   validates :user_id, presence: true
   validates :product_id, presence: true
-  validates :content, presence: true, length: {maximum: Settings.max.content}
+  validates :content, presence: true,
+   length: {maximum: Settings.maximum.content}
 end
