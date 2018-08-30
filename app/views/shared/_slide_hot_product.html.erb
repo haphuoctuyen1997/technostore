@@ -15,7 +15,7 @@
 
     <div class="item">
       <% @top_order_products.each do |product| %>
-        <%= image_tag "product.picture", alt: product.picture %>
+        <%= image_tag product.picture, alt: product.picture %>
         <div class="carousel-caption">
           <h3><%= product.name %></h3>
           <%= link_to t("product.see_detail"), "#" %>

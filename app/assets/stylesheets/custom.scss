@@ -70,3 +70,15 @@ footer ul li {
 }
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: 222}
 .mainmenu-area .nav > li > a:focus {color: #000}
+
+/*product detail*/
+.product-name {
+  padding-top: 10px;
+}
+.category {
+  padding-bottom: 20px;
+}
+.product-price {
+  padding-bottom: 20px;
+  color: red;
+}
