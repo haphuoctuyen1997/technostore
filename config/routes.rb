@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :suggests
   resources :users
   resources :products, only: :show
+  resources :categories
 end

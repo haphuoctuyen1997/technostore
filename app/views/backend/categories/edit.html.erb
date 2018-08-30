@@ -1,0 +1,16 @@
+<% provide :button, t("category.update") %>
+<%= render "shared/error_messages", object: @category %>
+<div class="container-fluid">
+  <div class="form-edit-category">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2><%= t "category.edit_category" %></h2>
+        <% if parent @category.parent_id %>
+          <%= render "category_form" %>
+        <% else %>
+          <%= render "subcategory_form" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

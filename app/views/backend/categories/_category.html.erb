@@ -1,7 +1,7 @@
 <tr>
-  <td><%= category_counter + 1 %></td>
+  <td><%= index_in_page category_counter, params[:page], Settings.per_category %></td>
   <td><%= category.name %></td>
   <td><%= category.parent_name %></td>
-  <td class="text-center"><%= link_to t("category.edit"), "#" %></td>
+  <td class="text-center"><%= link_to t("category.edit"), edit_backend_category_path(id: category.id) %></td>
   <td class="text-center"><%= link_to t("category.delete"), "#" %></td>
 </tr>
