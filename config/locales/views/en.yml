@@ -41,7 +41,7 @@ en:
       phone: "Phone"
     create:
       title_text: "Account activated!"
-      profile_updated: "Profile updated"
+      message_update: "Profile updated"
     edit:
       edit_title: "Edit User"
       username: "Username"
@@ -61,3 +61,4 @@ en:
   shared:
     error_messages:
       error_count: "Error"
+  save: "save"
