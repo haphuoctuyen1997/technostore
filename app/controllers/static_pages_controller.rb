@@ -1,3 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home; end
+  def home
+    @top_order_products = Product.top_order
+  end
 end

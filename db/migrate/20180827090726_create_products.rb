@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :quantity
       t.text :description
       t.string :picture
+      t.integer :number_of_order, default: 0
       t.references :category, foreign_key: true
 
       t.timestamps
