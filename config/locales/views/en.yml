@@ -1,4 +1,39 @@
 en:
+  users:
+    new:
+      sign_up: "Sign Up"
+      text_white: "This will be a signup page for new users."
+      username: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      create: "Create my account"
+      address: "Address"
+      phone: "Phone"
+    create:
+      title_text: "Account activated!"
+      profile_updated: "Profile updated"
+    edit:
+      edit_title: "Edit User"
+      username: "Username"
+      email: "Email"
+      password: "Password"
+      confirmation: "password_confirmation"
+      address: "Address"
+      phone: "phone"
+      save: save
+    show:
+      microposts_count: "Microposts( %{count} )"
+      edit: "Edit"
+  index:
+    title: "All Users"
+  delete: "Delete"
+  sure: "You sure?"
+  shared:
+    error_messages:
+      error_count: "Error"
+  signup: " Signup"
+  signin: " Signin"
   backend:
     static_page:
       index:

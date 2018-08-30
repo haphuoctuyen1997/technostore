@@ -15,8 +15,12 @@
           <li><%= link_to t("about"), "#" %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to t("signin"), "#", class: "glyphicon glyphicon-log-in" %></li>
-          <li><%= link_to t("signup"), new_user_path, class: "glyphicon glyphicon-user" %></li>
+          <li>
+            <%= link_to t("signin"), "#", class: "glyphicon glyphicon-log-in" %>
+          </li>
+          <li>
+            <%= link_to t("signup"), new_user_path, class: "glyphicon glyphicon-user" %> 
+          </li>
         </ul>
       </div>
     </div>
