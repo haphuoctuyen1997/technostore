@@ -26,3 +26,18 @@ en:
     product_not_found: "Not found product!"
   button:
     add_to_cart: "Add to cart"
+  category:
+    create_success: "Category created!"
+    create_category: "Create category:"
+    return_list: "Return list category"
+    name: "Category"
+    create: "Create"
+    sub: "Sub-category"
+    list: "List category:"
+    id: "ID"
+    parent: "Category parent"
+    button: "Create category"
+    action: "Action"
+    edit: "edit"
+    delete: "delete"
+    not_found: "Not found!"

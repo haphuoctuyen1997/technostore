@@ -6,6 +6,7 @@ maximum:
   email: 255
   phone: 20
 per_user: 10
+per_category: 5
 minimum:
   pass: 6
 sessions:
@@ -20,3 +21,4 @@ top_order: 5
 admin_user_perpage: 10
 size:
   product_detail: "500x400"
+category_roof: 0

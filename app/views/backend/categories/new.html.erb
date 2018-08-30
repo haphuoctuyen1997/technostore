@@ -1,0 +1,19 @@
+<%= render "shared/error_messages", object: @category %>
+<section class="form-create-category">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2><%= t "category.create_category" %></h2>
+      </div>
+      <div class="col-md-5">
+        <%= render "category_form" %>
+        <div class="return-list-category">
+          <%= link_to t("category.return_list"), backend_categories_path %>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <%= render "subcategory_form" %>
+      </div>
+    </div>
+  </div>
+</section>
