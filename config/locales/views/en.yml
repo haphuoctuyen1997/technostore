@@ -97,3 +97,17 @@ en:
     error_messages:
       error_count: "Error"
   save: "save"
+  layouts:
+    suggest:
+      suggest_title: "Suggest"
+      title_suggest: "Can suggest more product to admin"
+      address: " Viet Nam"
+      phone: " +00 1515151515"
+      mail: " myemail@something.com"
+      name_text: "Name"
+      email_text: "Email"
+      category: "Category"
+      send: "Send"
+      comments_sup: " Please give us your suggestion"
+    footer:
+      text_footer: "DESIGN BY 2018 FRAMGIA"
