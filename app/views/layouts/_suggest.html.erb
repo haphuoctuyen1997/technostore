@@ -1,0 +1,38 @@
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center"><%= t ".suggest_title" %></h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p><%= t ".title_suggest" %></p>
+      <p><span class="glyphicon glyphicon-map-marker"></span><%= t ".address" %></p>
+      <p><span class="glyphicon glyphicon-phone"></span><%= t ".phone" %></p>
+      <p><span class="glyphicon glyphicon-envelope"></span><%= t ".mail" %></p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <%= text_field(:name, :name, class: "form-control",
+            placeholder: t(".name_text")) %>
+        </div>
+        <div class="col-sm-6 form-group">
+          <%= email_field(:email, :email, class: "form-control",
+            placeholder: t(".email_text")) %>
+        </div>
+        <div class="col-sm-12 form-group">
+          <%= label_tag t ".category"%>
+          <select class="form-control" id="sel1">
+            <option><%= t ".category_1" %></option>
+            <option><%= t ".category_2" %></option>
+            <option><%= t ".category_3" %></option>
+          </select>
+        </div>
+      </div>
+      <%= text_area(:comments, :comments, class: "form-control",
+        placeholder: t(".comments_sup")) %>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit"><%= t ".send" %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
