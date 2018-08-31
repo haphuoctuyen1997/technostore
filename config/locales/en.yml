@@ -1,4 +1,9 @@
 en:
+  number:
+     currency:
+        format:
+          format: "%u%n"
+          unit: "$"
   base_title: "Ecommerces 52"
   home: "home"
   help: "help"
@@ -17,3 +22,7 @@ en:
         login: "Login"
         email: "Email"
         password: "Password"
+  error:
+    product_not_found: "Not found product!"
+  button:
+    add_to_cart: "Add to cart"

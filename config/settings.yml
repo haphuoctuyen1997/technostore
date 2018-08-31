@@ -18,3 +18,5 @@ product:
   see_detail: "See detail!"
 top_order: 5
 admin_user_perpage: 10
+size:
+  product_detail: "500x400"

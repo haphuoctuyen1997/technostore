@@ -6,12 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(name:  "duongtruong",
-             email: "duongtruong@gmail.com",
-             password: "foobar",
-             password_confirmation: "foobar",
-             role: 1,
-             address: "fdsfdsfdsfdsfdsfsdasdsad",
-             phone: "3454343242"
-             )
-p "Created #{User.count} users"
+10.times do |n|
+  name  = Faker::Name.name
+  Category.create!(name:  name,
+                parent_id: rand(1..9))
+
+end
+
+10.times do |n|
+  name  = Faker::Name.name
+  content = Faker::Lorem.sentence(5)
+  Product.create!(name:  name,
+               price: rand(50..10000),
+               quantity: rand(5..30),
+               description: content,
+               picture: "default.png",
+               category_id: 3)
+end
