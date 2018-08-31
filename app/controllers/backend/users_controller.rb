@@ -2,12 +2,18 @@ class Backend::UsersController < Backend::BaseController
   before_action :load_user, except: %i(index new create)
   before_action :load_roles, only: %i(edit new)
 
-  def index
-    @users = User.by_create_at.paginate page: params[:page],
-      per_page: Settings.admin_user_perpage
-  end
-
   def edit; end
+
+  def index
+    @users = User.newest
+    if params[:search].present?
+      @users = @users.search(params[:search]).paginate page: params[:page],
+        per_page: Settings.admin_user_perpage
+    else
+      @users = @users.paginate page: params[:page],
+        per_page: Settings.admin_user_perpage
+    end
+  end
 
   def update
     if @user.update_attributes user_params
