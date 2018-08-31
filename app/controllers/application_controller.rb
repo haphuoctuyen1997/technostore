@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
-  rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :not_found?
+  # rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :not_found?
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -21,5 +21,9 @@ class ApplicationController < ActionController::Base
     return if logged_in?
     flash[:danger] = t ".please_login"
     redirect_to login_path
+  end
+
+  def category_all
+    @categories = Category.all
   end
 end

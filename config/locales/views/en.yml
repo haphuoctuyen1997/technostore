@@ -1,4 +1,12 @@
 en:
+  home: " home "
+  help: "help"
+  about: "about"
+  user_home: "Users"
+  profile: " Profile"
+  settings: " Settings"
+  log_out: " Logout"
+  login: " Login"
   users:
     new:
       sign_up: "Sign Up"
@@ -13,6 +21,7 @@ en:
     create:
       title_text: "Account activated!"
       profile_updated: "Profile updated"
+      message_update: "updated successfully !"
     edit:
       edit_title: "Edit User"
       username: "Username"
@@ -23,15 +32,22 @@ en:
       phone: "phone"
       save: save
     show:
-      microposts_count: "Microposts( %{count} )"
+      suggests_count: "Suggests( %{count} )"
       edit: "Edit"
   index:
     title: "All Users"
   delete: "Delete"
   sure: "You sure?"
   shared:
+    user_info:
+      suggest_title: "Suggest"
+      title_suggest: "More products for administrators can be suggested"
+      here: "here"
+      address: " Viet Nam"
+      phone: " +00 1515151515"
+      mail: " myemail@something.com"
     error_messages:
-      error_count: "Error"
+      error_count: "error in the form contains"
   signup: " Signup"
   signin: " Signin"
   backend:
@@ -63,39 +79,6 @@ en:
       form:
         remember_me: "Remember Me"
         login: "Login"
-  users:
-    new:
-      sign_up: "Sign Up"
-      text_white: "This will be a signup page for new users."
-      username: "Name"
-      email: "Email"
-      password: "Password"
-      password_confirmation: "Confirmation"
-      create: "Create my account"
-      address: "Address"
-      phone: "Phone"
-    create:
-      title_text: "Account activated!"
-      message_update: "Profile updated"
-    edit:
-      edit_title: "Edit User"
-      username: "Username"
-      email: "Email"
-      password: "Password"
-      confirmation: "password_confirmation"
-      address: "Address"
-      phone: "phone"
-      save: save
-    show:
-      microposts_count: "Microposts( %{count} )"
-      edit: "Edit"
-  index:
-    title: "All usersss"
-  delete: "Delete"
-  sure: "You sure?"
-  shared:
-    error_messages:
-      error_count: "Error"
   save: "save"
   layouts:
     suggest:
@@ -104,10 +87,27 @@ en:
       address: " Viet Nam"
       phone: " +00 1515151515"
       mail: " myemail@something.com"
-      name_text: "Name"
-      email_text: "Email"
-      category: "Category"
-      send: "Send"
-      comments_sup: " Please give us your suggestion"
     footer:
       text_footer: "DESIGN BY 2018 FRAMGIA"
+  suggests:
+    new:
+      suggest_title: "Suggest"
+      title_suggest: "Can suggest more product to admin"
+      address: " Viet Nam"
+      phone: " +00 1515151515"
+      mail: " myemail@something.com"
+      suggest_title: "Suggests"
+      name_text: "Name"
+      email_text: "Email"
+      category: "Category "
+      send: "Send"
+      comments_sup: " Please give us your suggestion"
+      please_login: "please login to suggest !"
+      name_suggest: "Please enter the product name to suggests"
+      desscription_suggest: "More comments about the product to suggest"
+      suggests_count: "Suggests( %{count} )"
+    create:
+      please_login: "please login to suggest !"
+      new_suggest: "Success Suggest !"
+      not_suggest: "Not Success Sugges !"
+  suggests_count: "Suggests( %{count} )"

@@ -1,6 +1,13 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+$light-gray: #777;
+$davy-gray: #555;
+$light-white: #fff;
+$black-gray: #222;
+$e-gray: #eaeaea;
+$red-green: #ff6600;
+$blu-green: #484848;
 section {
   overflow: auto;
 }
@@ -21,7 +28,7 @@ textarea {
 }.logo {
   float: left;
   margin-right: 10px;
-  color: #fff;
+  color: $light-white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 15px;
@@ -29,20 +36,20 @@ textarea {
   font-weight: bold;
 }
 .logo:hover {
-  color: #fff;
+  color: $light-white;
   text-decoration: none;
 }
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
+  border-top: 1px solid $e-gray;
+  color: $light-gray;
 }
 footer a {
-  color: #555;
+  color: $davy-gray;
 }
 footer a:hover {
-  color: #222;
+  color: $black-gray;
 }
 footer small {
   float: left;
@@ -56,20 +63,27 @@ footer ul li {
   margin-left: 15px;
 }
 .mainmenu-area {
-  background: none repeat scroll 0 0 #ff6600;
+  background: none repeat scroll 0 0 $red-green;
   font-family: "Roboto Condensed",sans-serif;
   text-transform: uppercase;
   width: 100%;
   z-index: 999;
 }
+.mainmenu-area ul.navbar-nav .right_to{
+  width: 160px;
+}
+.mainmenu-area ul.navbar-nav .right_to ul li a{
+  color: black;
+}
 .mainmenu-area ul.navbar-nav li a {
-  color: #fff;
-  font-size: 16px;
+  text-align: center;
+  color: $blu-green;
+  font-size: 14px;
   font-weight: 700;
   padding: 20px;
 }
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: 222}
-.mainmenu-area .nav > li > a:focus {color: #000}
+.mainmenu-area .nav > li > a:focus {color: black}
 
 /*product detail*/
 .product-name {
@@ -84,6 +98,7 @@ footer ul li {
 }
 .hidden {
   display: none;
+}
 
 /* create category form */
 .category-select {

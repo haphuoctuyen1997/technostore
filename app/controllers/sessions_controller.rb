@@ -6,13 +6,7 @@ class SessionsController < ApplicationController
     session = params[:session]
     user = User.find_by email: session[:email].downcase
     if user&.authenticate(session[:password])
-      if user.admin?
-        log_in user
-        remember_me user
-        redirect_to backend_path
-      else
-        redirect_to root_path
-      end
+      login_admin_user user
     else
       flash_danger
     end
@@ -34,5 +28,14 @@ class SessionsController < ApplicationController
   def destroy
     log_out if logged_in?
     redirect_to login_path
+  end
+
+
+  private
+
+  def login_admin_user user
+    log_in user
+    remember_me user
+    user.admin? ? redirect_to(backend_path) : redirect_to(root_path)
   end
 end
