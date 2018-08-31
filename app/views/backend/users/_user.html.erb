@@ -1,0 +1,11 @@
+<% unless user.admin? %>
+  <tr class="odd gradeX">
+    <td class="center"><%= user.id %></td>
+    <td class="center"><%= user.name %></td>
+    <td class="center"><%= user.email %></td>
+    <td class="center"><%= user.address %></td>
+    <td class="center"><%= user.phone %></td>
+    <td class="center"><%= user.role %></td>
+    <td><%= raw load_table_user user %></td>
+  </tr>
+<% end %>

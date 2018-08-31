@@ -22,6 +22,7 @@ class User < ApplicationRecord
 
   enum role: {member: 0, admin: 1}
 
+  scope :by_create_at, ->{order created_at: :DESC}
   def authenticated? remember_token
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)

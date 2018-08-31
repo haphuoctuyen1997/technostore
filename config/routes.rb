@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
 	namespace :backend do
 		get "/", to: "static_page#index"
+
+    resources :users
 	end
 
 	resources :users

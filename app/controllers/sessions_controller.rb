@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         remember_me user
         redirect_to backend_path
       else
-        redirect_to backend_login_path
+        redirect_to root_path
       end
     else
       flash_danger
