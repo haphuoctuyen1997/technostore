@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get "/", to: "static_page#index"
 
     resources :users
+    resources :requests
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

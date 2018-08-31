@@ -1,0 +1,14 @@
+<tr class="odd gradeX">
+  <td class="center"><%= request.id %></td>
+  <td class="center"><%= request.name %></td>
+  <td class="center"><%= request.description %></td>
+  <td class="center" id="request-<%= request.id %>"><%= request.status %></td>
+  <td class="center"><%= request.user.name %></td>
+  <td class="center"><%= request.category.name %></td>
+  <td class="abc">
+    <a class="verify btn btn-default <%= request.accept? ? 'hidden' : '' %>"
+      data-id="<%= request.id %>" ><%= t ".verify" %></a>
+    <a class="delete btn btn-default <%= request.accept? ? '' : 'hidden' %>"
+      data-id="<%= request.id %>" ><%= t ".cancel" %></a>
+  </td>
+</tr>

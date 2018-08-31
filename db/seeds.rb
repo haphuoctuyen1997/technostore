@@ -23,3 +23,26 @@ end
                picture: "default.png",
                category_id: 3)
 end
+
+User.create!(name:  "duongtruong",
+             email: "duongtruong@gmail.com",
+             password: "foobar",
+             password_confirmation: "foobar",
+             role: 1,
+             address: "fdsfdsfdsfdsfdsfsdasdsad",
+             phone: "3454343242"
+             )
+p "Created #{User.count} users"
+
+Category.create!(name:  "cccccccccccc",
+             parent_id: 1
+             )
+p "Created #{Category.count} categoriess"
+
+Suggest.create!(name:  "aaaaaaaaaaaa",
+             description: "bbbbbbbbbbbbbbb",
+             status: 1,
+             user_id: 1,
+             category_id: 1
+             )
+p "Created #{Suggest.count} suggets"
