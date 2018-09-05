@@ -38,6 +38,9 @@
             </li>
           <% else %>
             <li>
+              <%= link_to t("signup"), signup_path,class: "glyphicon glyphicon-log-in" %>
+            </li>
+            <li>
               <%= link_to t("login"), login_path,class: "glyphicon glyphicon-log-in" %>
             </li>
           <% end %>
