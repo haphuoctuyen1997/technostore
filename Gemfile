@@ -48,6 +48,10 @@ group :development do
   gem "web-console", ">= 3.3.0"
 end
 
+group :production do
+  gem "pg", "~> 0.19.0"
+end
+
 group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
