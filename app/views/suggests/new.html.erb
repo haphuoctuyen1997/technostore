@@ -1,0 +1,37 @@
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center"><%= t ".suggest_title" %></h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p><%= t ".title_suggest" %></p>
+      <p><span class="glyphicon glyphicon-map-marker"></span><%= t ".address" %></p>
+      <p><span class="glyphicon glyphicon-phone"></span><%= t ".phone" %></p>
+      <p><span class="glyphicon glyphicon-envelope"></span><%= t ".mail" %></p>
+    </div>
+    <div class="col-sm-7 slideanim">
+        <div class="row">
+          <%= form_for @suggest  do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+            <div class="col-sm-6 form-group">
+              <h4><%= current_user.name %></h4>
+              <%= f.hidden_field(:user_id, value: current_user.id) %>
+            </div>
+            <div class="col-sm-12 form-group">
+              <%= label_tag t ".category" %>
+              <%= f.select :category_id, load_category(@categories), {}, {class: "form-control"} %>
+            </div>
+            <div class="col-sm-12 form-group">
+              <%= f.text_field :name, class: "form-control",
+                "placeholder" => t(".name_suggest") %>
+            </div>
+            <div class="col-sm-12 form-group">
+              <%= f.text_area :description, class: "form-control",
+                :placeholder => t(".desscription_suggest") %>
+            </div>
+            <div class="col-sm-12 form-group">
+              <%= f.submit t(".send"), class: "btn btn-default pull-right" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

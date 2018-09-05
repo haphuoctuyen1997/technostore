@@ -5,11 +5,6 @@ en:
           format: "%u%n"
           unit: "$"
   base_title: "Ecommerces 52"
-  home: "home"
-  help: "help"
-  about: "about"
-  signin: "signin"
-  signup: "signup"
   alt:
     logo: "logo"
   hello: "Hello world"
