@@ -10,12 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
+//= require jquery.turbolinks
 //= require activestorage
 //= require twitter/bootstrap
-//= require turbolinks
-//= require jquery
 //= require bootstrap
 //= require backend/metisMenu.min
 //= require backend/startmin
 //= require_tree ../../../vendor/javascripts/backend
+//= require sweetalert2
+//= require rails-sweetalert2-confirm
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+//= require turbolinks
