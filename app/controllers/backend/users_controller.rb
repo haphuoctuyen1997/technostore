@@ -1,6 +1,6 @@
 class Backend::UsersController < Backend::BaseController
   before_action :load_user, except: %i(index new create)
-  before_action :load_roles, only: %i(edit new)
+  before_action :load_roles, except: %i(index show destroy)
 
   def edit; end
 
@@ -20,7 +20,6 @@ class Backend::UsersController < Backend::BaseController
       flash[:success] = t ".user_updated"
       redirect_to backend_users_path
     else
-      flash[:danger] = t ".update_user_fail"
       render :edit
     end
   end
@@ -33,10 +32,10 @@ class Backend::UsersController < Backend::BaseController
     @user = User.new user_params
     if @user.save
       flash[:success] = t ".user_create"
+      redirect_to backend_users_path
     else
-      flash[:danger] = t ".user_create_fail"
+      render :new
     end
-    redirect_to backend_users_path
   end
 
   def show; end

@@ -50,6 +50,7 @@ en:
         you_sure: "You sure ?"
         enter_name_email: "Enter name or email !"
         search: "search"
+        create_user: "Create User"
       create:
         user_create: "User Created"
         user_create_fail: "Create Failed"
