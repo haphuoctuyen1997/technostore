@@ -654,3 +654,44 @@ table.dataTable thead .sorting:after {
     color: #fff;
     background-color: #a94442;
 }
+
+/* manager category */
+.return-list-category {
+  margin-top: 80px;
+  padding-top: 40px;
+}
+.list-category {
+  margin-top: 20px;
+  .table-category {
+    margin-top: 20px;
+  }
+}
+.message {
+  margin-top: 50px;
+}
+.category-select {
+  margin-bottom: 10px;
+}
+.btn-create {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.form-create-category {
+  margin-top: 20px;
+}
+
+/* error form */
+#error_explanation {
+  margin-top: 50px;
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
