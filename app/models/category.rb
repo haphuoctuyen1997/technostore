@@ -6,6 +6,7 @@ class Category < ApplicationRecord
   validates :parent_id, presence: true
 
   scope :newest, ->{order created_at: :desc}
+  scope :search, ->(key) do where "name LIKE ?", "%#{key}%" end
 
   def parent_name
     return "null" if parent_id == Settings.category_roof
