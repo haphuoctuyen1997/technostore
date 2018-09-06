@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/signup", to: "users#new"
+  get "orders/new"
 
   resources :suggests
   resources :users

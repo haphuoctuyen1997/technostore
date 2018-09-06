@@ -30,7 +30,6 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
-
   private
 
   def login_admin_user user

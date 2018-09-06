@@ -1,0 +1,107 @@
+<div class="row">
+  <div class="receipt-main col-xs-10 col-sm-10 col-md-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
+    <div class="row">
+      <div class="receipt-header">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="receipt-left">
+            <img class="img-responsive img_title_order" alt="iamgurdeeposahan" src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" >
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+            <div class="receipt-right">
+              <h4><%= t "title_home" %></h4><br>
+              <p><%= t "t_phone" %><i class="fa fa-phone"></i></p>
+              <p><%= t "t_mail" %><i class="fa fa-envelope-o"></i></p>
+              <p><%= t "t_address" %><i class="fa fa-location-arrow"></i></p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="receipt-header receipt-header-mid">
+        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+          <div class="receipt-right">
+            <h4 class="text-danger"><%= current_user.name %></h4>
+            <p><b><%= t ".mobile" %></b><%= current_user.phone %></p>
+            <p><b><%= t ".email" %></b><%= current_user.email %></p>
+            <p><b><%= t ".address" %></b><%= current_user.address %></p>
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <div class="receipt-left">
+            <h2 class="text-primary"><%= t ".your_order" %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="bg-primary"><%= t ".description" %></th>
+            <th class="bg-primary"><%= t ".amount" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="col-md-9"><%= t ".product" %></td>
+            <td class="col-md-3"><%= t ".money" %><i class="glyphicon glyphicon-usd"></i></td>
+          </tr>
+          <tr>
+            <td class="col-md-9"><%= t ".product" %></td>
+            <td class="col-md-3"><%= t ".money" %><i class="glyphicon glyphicon-usd"></i></td>
+          </tr>
+          <tr>
+            <td class="col-md-9"><%= t ".product" %></td>
+            <td class="col-md-3"><%= t ".money" %><i class="glyphicon glyphicon-usd"></i></td>
+          </tr>
+          <tr>
+            <td class="text-right">
+            <p>
+              <strong><%= t ".total" %></strong>
+            </p>
+            <p>
+              <strong><%= t ".late_fees" %></strong>
+            </p>
+            <p>
+              <strong><%= t ".amount" %></strong>
+            </p>
+            </td>
+            <td>
+            <p>
+              <strong><%= t ".money" %><i class="glyphicon glyphicon-usd"></i></strong>
+            </p>
+            <p>
+              <strong><%= t ".money" %><i class="glyphicon glyphicon-usd"></i></strong>
+            </p>
+            <p>
+              <strong><%= t ".amount_product" %></strong>
+            </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right"><h2><strong><%= t ".total" %></strong></h2>
+            </td>
+            <td class="text-left text-danger"><h2><%= t ".money" %><i class="glyphicon glyphicon-usd"></i></h2>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="receipt-header receipt-header-mid receipt-footer">
+        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+          <div class="receipt-right">
+            <p><b><%= t ".date" %></b><%= day_format %></p>
+            <h5 class="text-muted"><%= t ".thank_you" %></h5>
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <div class="receipt-left">
+            <button type="button" class="btn btn-primary btn-lg"><%= t ".place_order" %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
