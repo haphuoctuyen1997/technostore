@@ -14,4 +14,5 @@ class Product < ApplicationRecord
   validates :quantity, presence: true, numericality: {only_integer: true}
 
   scope :top_order, ->{order(number_of_order: :desc).limit Settings.top_order}
+  scope :newest, ->{order(created_at: :desc).limit Settings.product_recent}
 end

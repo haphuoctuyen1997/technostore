@@ -23,3 +23,5 @@ admin_user_perpage: 10
 size:
   product_detail: "500x400"
 category_roof: 0
+product_recent: 8
+product_perpage: 12

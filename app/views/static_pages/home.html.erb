@@ -1,5 +1,19 @@
 <% provide :title, t("home") %>
 <div class="slide_hot_product">
   <%= render "shared/slide_hot_product" %>
-   <%= render "shared/user_info" %>
+  <div class="container">
+    <div class="row">
+      <h2><%= t ".product_recent" %></h2>
+      <hr>
+      <%= render partial: "product_recent", collection: @products_recent %>
+    </div>
+    <div class="row">
+      <h2><%= t ".product_all" %></h2>
+      <hr>
+      <%= render @products %>
+    </div>
+    <%= will_paginate @products %>
+  </div>
+</div>
+<%= render "shared/user_info" %>
 </div>
