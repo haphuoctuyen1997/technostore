@@ -1,4 +1,8 @@
 en:
+  static_pages:
+    home:
+      product_recent: "Ecommerce Products Display Recent"
+      product_all: "Ecommerce Products Display All"
   home: " home "
   help: "help"
   about: "about"
@@ -13,6 +17,9 @@ en:
   t_address: " Da Nang - Viet Nam "
   t_phone: " +00 1515151515 "
   t_mail: " framgia@something.com "
+  add_to_cart: "Add to cart"
+  detail_product: "Detail Product"
+  view_cart: "View Cart"
   users:
     new:
       sign_up: "Sign Up"

@@ -1,0 +1,36 @@
+<div class="col-sm-3">
+  <article class="col-item">
+    <div class="photo">
+      <div class="options-cart-round">
+        <button class="btn btn-default" title="Add to cart">
+          <span class="fa fa-shopping-cart"></span>
+        </button>
+      </div>
+      <%= link_to image_tag("default.png"), {}, class: "" %>
+    </div>
+    <div class="info">
+      <div class="row">
+        <div class="price-details col-md-6">
+          <div class="product_home">
+            <p class="details">
+              <%= product.description %>
+            </p>
+          </div>
+          <div>
+            <h1><%= product.name %></h1>
+            <span class="price-new text-danger"><%= number_to_currency product.price %></span><br>
+          </div>
+          <div class="separator clear-left">
+            <p class="btn-add">
+              <i class="fa fa-shopping-cart"></i><a href="#" class="hidden-sm"><%= t".view_cart" %></a>
+            </p>
+            <p class="btn-details">
+              <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Add to wish list"><i class="fa fa-heart"></i></a>
+              <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Compare"><i class="fa fa-exchange"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
