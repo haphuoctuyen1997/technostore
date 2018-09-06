@@ -136,3 +136,18 @@ en:
       thank_you: "Thank you for order!"
       place_order: "place order"
       date: "Date :"
+  carts:
+    show:
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      total: "Total"
+      remove: "Remove"
+      subtotal: "Subtotal"
+      estimated_shipping: "Estimated shipping"
+      continue_shopping: "Continue Shopping"
+      checkout: "Checkout"
+      product_name: "Product name"
+      brand_name: "Brand name"
+      status: "Status :"
+      in_stock: "In Stock"
