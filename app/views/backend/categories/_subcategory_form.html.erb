@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= f.label :id, t("category.name"), class: "control-label col-md-3" %>
     <div class="col-md-9 category-select">
-      <%= f.select :parent_id, option_select(@categories) %>
+      <%= f.select :parent_id, option_select(@selects) %>
     </div>
   </div>
   <div class="form-group">

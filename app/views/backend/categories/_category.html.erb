@@ -3,5 +3,6 @@
   <td><%= category.name %></td>
   <td><%= category.parent_name %></td>
   <td class="text-center"><%= link_to t("category.edit"), edit_backend_category_path(id: category.id) %></td>
-  <td class="text-center"><%= link_to t("category.delete"), "#" %></td>
+  <td class="text-center"><%= link_to t("category.delete"), backend_category_path(category), method: :delete,
+   data: {confirm: t("category.sure")} %></td>
 </tr>

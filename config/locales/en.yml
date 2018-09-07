@@ -40,3 +40,6 @@ en:
     update_success: "Category updated!"
     not_found: "Not found!"
     search: "Search"
+    sure: "You sure?"
+    destroy_error: "Destroy error!"
+    destroy_success: "Category deleted!"
