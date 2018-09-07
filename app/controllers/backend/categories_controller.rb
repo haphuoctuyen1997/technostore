@@ -51,8 +51,7 @@ class Backend::CategoriesController < Backend::BaseController
     end
     flash[:success] = t "category.destroy_success"
     redirect_to backend_categories_path
-
-    rescue ActiveRecord::RecordNotDestroyed
+  rescue ActiveRecord::RecordNotDestroyed
     flash[:danger] = t "category.destroy_error"
     redirect_to backend_categories_path
   end

@@ -9,7 +9,7 @@
 10.times do |n|
   name  = Faker::Name.name
   Category.create!(name:  name,
-                parent_id: rand(1..9))
+                parent_id: rand(0..9))
 
 end
 
@@ -32,7 +32,42 @@ User.create!(name:  "duongtruong",
              address: "fdsfdsfdsfdsfdsfsdasdsad",
              phone: "3454343242"
              )
+
+User.create!(name:  "vanle",
+             email: "phamvanle@gmail.com",
+             password: "123123",
+             password_confirmation: "123123",
+             role: 1,
+             address: "quang nam",
+             phone: "01667272741"
+             )
+
+10.times do |n|
+  name  = Faker::Name.name
+  email = "example_#{n}@gmail.com"
+  password = "123123"
+  content = Faker::Lorem.sentence(5)
+  User.create!(name:  name,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               role: 0,
+               address: content,
+               phone: "01667272741")
+end
+
 p "Created #{User.count} users"
+
+10.times do |n|
+  name  = Faker::Name.name
+  content = Faker::Lorem.sentence(5)
+  Order.create!(user_id: rand(3..12),
+               receiver_name:  name,
+               receiver_address: content,
+               receiver_phone: "01667272741",
+               total_price: rand(100..10000))
+
+end
 
 Category.create!(name:  "cccccccccccc",
              parent_id: 1

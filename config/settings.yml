@@ -7,6 +7,7 @@ maximum:
   phone: 20
 per_user: 10
 per_category: 5
+per_order: 5
 counter_default: 1
 minimum:
   pass: 6
