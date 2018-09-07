@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :suggests
   resources :users
-  resources :products, only: :show
+  resources :products
   resources :categories
   resources :orders do
     collection do

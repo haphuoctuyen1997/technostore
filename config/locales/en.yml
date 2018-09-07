@@ -79,3 +79,10 @@ en:
   product:
     default: "default"
     see_detail: "See detail!"
+  search:
+    filter_by: "Filter by"
+    category:  "Category:"
+    all: "All category"
+    min: "Min price ($):"
+    max: "Max price ($):"
+    name: "Product's name"
