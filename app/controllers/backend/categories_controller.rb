@@ -1,5 +1,5 @@
 class Backend::CategoriesController < Backend::BaseController
-  before_action :load_all_categories, only: :destroy
+  before_action :load_level_category, only: :destroy
   before_action :load_categoy, only: %i(edit update destroy)
   before_action :load_selects, only: %i(edit new)
 
@@ -40,13 +40,7 @@ class Backend::CategoriesController < Backend::BaseController
 
   def destroy
     ActiveRecord::Base.transaction do
-      @categories.each do |object|
-        next unless object.parent_id == @category.id
-        @categories.each do |item|
-          item.destroy! if item.parent_id == object.id
-        end
-        object.destroy!
-      end
+      destroy_all_childs
       @category.destroy!
     end
     flash[:success] = t "category.destroy_success"
@@ -57,6 +51,28 @@ class Backend::CategoriesController < Backend::BaseController
   end
 
   private
+
+  def destroy_all_childs
+    if @parents.include? @category
+      @childs1.each do |child1|
+        next unless child1.parent_id == @category.id
+        @childs2.each do |child2|
+          child2.destroy! if child2.parent_id == child1.id
+        end
+        child1.destroy!
+      end
+    elsif @childs1.include? @category
+      @childs2.each do |child2|
+        child2.destroy! if child2.parent_id == @category.id
+      end
+    end
+  end
+
+  def load_level_category
+    @parents = Category.find_parent
+    @childs1 = Category.find_child(@parents)
+    @childs2 = Category.find_child(@childs1)
+  end
 
   def load_all_categories
     @categories = Category.newest.all

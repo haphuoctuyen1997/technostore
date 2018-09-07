@@ -7,6 +7,8 @@ class Category < ApplicationRecord
 
   scope :newest, ->{order created_at: :desc}
   scope :search, ->(key) do where "name LIKE ?", "%#{key}%" end
+  scope :find_parent, ->{where "parent_id == 0 "}
+  scope :find_child, ->(parent){where parent_id: parent.ids}
 
   def parent_name
     return "null" if parent_id == Settings.category_roof

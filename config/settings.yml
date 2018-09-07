@@ -13,12 +13,6 @@ minimum:
   pass: 6
 sessions:
   is_remember: "1"
-slide:
-  previous: "Previous"
-  next: "Next"
-product:
-  default: "default"
-  see_detail: "See detail!"
 top_order: 5
 admin_user_perpage: 10
 size:
@@ -27,3 +21,8 @@ category_roof: 0
 product_recent: 8
 product_perpage: 12
 per_page: 8
+tax_percent: 10
+order:
+  pending: 0
+  accepted: 1
+  rejected: 2

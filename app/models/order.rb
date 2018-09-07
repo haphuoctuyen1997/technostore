@@ -13,7 +13,15 @@ class Order < ApplicationRecord
   validates :user_id, presence: true
   validates :total_price, presence: true
 
-  enum status: {pending: 0, accept: 1, cancel: 2}
+  enum status: {pending: 0, accepted: 1, rejected: 2}
 
   scope :newest, ->{order created_at: :desc}
+
+  def caculate_tax tax_percent
+    (total_price * tax_percent) / 100
+  end
+
+  def invoice_total tax_percent
+    total_price + caculate_tax(tax_percent)
+  end
 end
