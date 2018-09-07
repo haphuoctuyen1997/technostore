@@ -1,0 +1,26 @@
+<section class="list-order">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2><%= t "orders.list_order" %></h2>
+      </div>
+    </div>
+    <table class="table table-bordered table-order">
+      <thead>
+        <tr>
+          <th><%= t "orders.no" %></th>
+          <th><%= t "orders.user_name" %></th>
+          <th><%= t "orders.status" %></th>
+          <th><%= t "orders.date_order" %></th>
+          <th><%= t "orders.total_price" %></th>
+          <th class="text-center"><%= t "orders.detail" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @orders %>
+      </tbody>
+    </table>
+
+    <%= will_paginate %>
+  </div>
+</section>

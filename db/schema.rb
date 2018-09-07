@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 2018_08_28_091945) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string "receiver_name"
+    t.string "receiver_address"
+    t.string "receiver_phone"
     t.float "total_price"
-    t.datetime "date_order"
     t.integer "status", default: 0, null: false
     t.integer "user_id"
     t.datetime "created_at", null: false

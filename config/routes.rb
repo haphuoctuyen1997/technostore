@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :users
     resources :requests
+    resources :orders
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

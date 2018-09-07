@@ -4,6 +4,9 @@ en:
         format:
           format: "%u%n"
           unit: "$"
+  time:
+    formats:
+      format_date: "%d/%m/%Y"
   base_title: "Ecommerces 52"
   alt:
     logo: "logo"
@@ -24,11 +27,11 @@ en:
   category:
     create_success: "Category created!"
     create_category: "Create category:"
-    return_list: "Return list category"
+    return_list: "Return list categories"
     name: "Category"
     create: "Create"
     sub: "Sub-category"
-    list: "List category:"
+    list: "List categories:"
     no: "No"
     parent: "Category parent"
     button: "Create category"
@@ -43,3 +46,11 @@ en:
     sure: "You sure?"
     destroy_error: "Destroy error!"
     destroy_success: "Category deleted!"
+  orders:
+    list_order: "List orders:"
+    no: "No"
+    user_name: "User name"
+    status:  "Status"
+    date_order: "Date order"
+    total_price: "Total price"
+    detail: "Detail"
