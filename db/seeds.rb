@@ -5,12 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-10.times do |n|
+3.times do |n|
   name  = Faker::Name.name
   Category.create!(name:  name,
-                parent_id: rand(0..9))
+                parent_id: 0)
+end
 
+5.times do |n|
+  name  = Faker::Name.name
+  Category.create!(name:  name,
+                parent_id: rand(1..3))
+end
+
+5.times do |n|
+  name  = Faker::Name.name
+  Category.create!(name:  name,
+                parent_id: rand(3..8))
 end
 
 10.times do |n|
@@ -21,7 +31,7 @@ end
                quantity: rand(5..30),
                description: content,
                picture: "default.png",
-               category_id: 3)
+               category_id: rand(1..5))
 end
 User.create!(name:  "phuoctuyen",
              email: "haphuoctuyen1997@gmail.com",

@@ -17,6 +17,8 @@ class Order < ApplicationRecord
 
   scope :newest, ->{order created_at: :desc}
   scope :feed_user_id, ->(id){where user_id: id}
+  scope :by_name, ->(key){Order.joins(:user).where "name LIKE ?", "%#{key}%"}
+  scope :by_status, ->(status){where status: status}
 
   def caculate_tax tax_percent
     (total_price * tax_percent) / 100

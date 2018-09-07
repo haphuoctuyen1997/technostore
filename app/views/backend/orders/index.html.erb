@@ -4,6 +4,14 @@
       <div class="col-md-4">
         <h2><%= t "orders.list_order" %></h2>
       </div>
+      <div class="col-md-8 search-form-order text-right">
+        <%= form_tag backend_orders_path, method: :get do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag t("category.search") %>
+          </p>
+        <% end %>
+      </div>
     </div>
     <table class="table table-bordered table-order">
       <thead>

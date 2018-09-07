@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_action :set_locale
+  before_action :set_locale, :category_all
 
   rescue_from ActiveRecord::RecordNotFound, NoMethodError, with: :not_found?
 
