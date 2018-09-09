@@ -136,6 +136,11 @@ en:
       thank_you: "Thank you for order!"
       place_order: "place order"
       date: "Date :"
+    index:
+      price_data: "one"
+      order_bill: "CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"
+      delete_his: "Delete this entry"
+      you_sure: " Are you sure you want to delete this Record?"
   carts:
     show:
       product: "Product"
