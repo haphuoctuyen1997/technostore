@@ -23,6 +23,13 @@ end
                picture: "default.png",
                category_id: 3)
 end
+User.create!(name:  "phuoctuyen",
+             email: "haphuoctuyen1997@gmail.com",
+             password: "11111111",
+             password_confirmation: "11111111",
+             address: "điện phước ,điện bàn , quảng nam",
+             phone: "01219399936"
+             )
 
 User.create!(name:  "duongtruong",
              email: "duongtruong@gmail.com",
@@ -61,7 +68,7 @@ p "Created #{User.count} users"
 10.times do |n|
   name  = Faker::Name.name
   content = Faker::Lorem.sentence(5)
-  Order.create!(user_id: rand(3..12),
+  Order.create!(user_id: rand(1..3),
                receiver_name:  name,
                receiver_address: content,
                receiver_phone: "01667272741",

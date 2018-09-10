@@ -1,13 +1,23 @@
 class OrdersController < ApplicationController
-  before_action :category_all, only: %i(index new checkout)
+  before_action :category_all, only: %i(index new show checkout)
 
   def index
-    @oders = Order.paginate page: params[:page], per_page: Settings.per_page
+    @orders = Order.feed_user_id(current_user.id)
+                   .paginate page: params[:page], per_page: Settings.per_page
   end
 
-  def new; end
+  def new
+    @order = Order.new
+  end
 
-  def show; end
+  def show
+    if @order = Order.find_by(id: params[:id])
+      @order_items = @order.order_items.includes(:product)
+    else
+      flash[:success] = t ".not_show"
+      redirect_to root_path
+    end
+  end
 
   def checkout
     @order = Order.new
