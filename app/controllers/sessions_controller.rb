@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :category_all, only: :new
+
   def new; end
 
   def create
