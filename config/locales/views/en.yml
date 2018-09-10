@@ -142,6 +142,7 @@ en:
       delete_his: "Delete this entry"
       you_sure: " Are you sure you want to delete this Record?"
   carts:
+    notice: "Not enough quantity"
     show:
       product: "Product"
       quantity: "Quantity"
