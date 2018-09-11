@@ -69,6 +69,14 @@ p "Created #{User.count} users"
 
 end
 
+10.times do |n|
+  OrderItem.create!(order_id: rand(1..10),
+                   product_id:  rand(1..10),
+                   price: rand(50..1000),
+                   quantity: rand(1..5))
+
+end
+
 Category.create!(name:  "cccccccccccc",
              parent_id: 1
              )

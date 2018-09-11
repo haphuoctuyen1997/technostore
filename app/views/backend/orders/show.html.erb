@@ -1,0 +1,112 @@
+<div class="show-detail-order">
+  <div class="row">
+    <div class="receipt-main col-xs-10 col-sm-10 col-md-10 col-xs-offset-1 col-sm-offset-1 col-md-offset-1">
+      <div class="row">
+        <div class="receipt-header">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="receipt-left">
+              <%= image_tag "logo.png", alt: t("alt.logo"),
+               class: "img_title_order" %>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+              <div class="receipt-right">
+                <p><%= t "t_phone" %><i class="fa fa-phone"></i></p>
+                <p><%= t "t_mail" %><i class="fa fa-envelope-o"></i></p>
+                <p><%= t "t_address" %><i class="fa fa-location-arrow"></i></p>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="receipt-header receipt-header-mid">
+          <div class="col-xs-4 col-sm-4 col-md-4 text-left">
+            <div class="receipt-right">
+              <h3><%= t "orders.receiver" %></h3>
+              <p>
+                <b><%= t "orders.receiver_name" %></b>
+                <%= @order.receiver_name %>
+              </p>
+              <p>
+                <b><%= t "orders.receiver_address" %></b>
+                <%= @order.receiver_address %>
+              </p>
+              <p>
+                <b><%= t "orders.receiver_phone" %></b>
+                <%= @order.receiver_phone %>
+              </p>
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 text-center">
+            <div class="receipt-center">
+              <h3><%= t "orders.date_order" %></h3>
+              <h4><%= l @order.created_at, format: :format_date %></h4>
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 text-right">
+            <div class="receipt-left">
+              <h3 class="text-primary"><%= t "orders.invoice_total" %></h3>
+              <h2 class="text-danger">
+                <%= number_to_currency @order.invoice_total Settings.tax_percent %>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <table class="table table-bordered">
+          <thead>
+            <tr class="bg-primary">
+              <th class="text-center"><%= t "orders.product" %></th>
+              <th class="text-center"><%= t "orders.cost" %></th>
+              <th class="text-center"><%= t "orders.quantyti" %></th>
+              <th class="text-center"><%= t "orders.amount" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @order.order_items.includes(:product) %>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="text-right" colspan="3" rowspan="2">
+                <h3><%= t "orders.total" %></h3>
+                <h3><%= t "orders.tax" %></h3>
+              </td>
+              <td class="text-right text-danger">
+                <h3><%= number_to_currency @order.total_price %></h3>
+                <h3>
+                  <%= number_to_currency @order.caculate_tax Settings.tax_percent %>
+                </h3>
+              </td>
+            </tr>
+            <tr></tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="row">
+        <div class="receipt-header receipt-header-mid receipt-footer">
+          <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+            <div class="receipt-right">
+              <h5 class="text-muted"><%= t "orders.thank_you" %></h5>
+              <div class="return-list-orders">
+                <%= link_to t("orders.return_list"), backend_orders_path %>
+              </div>
+            </div>
+          </div>
+          <% if @order.pending? %>
+            <div class="col-xs-2 col-sm-2 col-md-2 text-right">
+              <div class="receipt-left">
+                <%= link_to t("orders.accept"), backend_order_path(status: Settings.order.accepted), method: :put, class: "btn btn-success", role: :button,data: {confirm: t("category.sure")} %>
+              </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 text-right">
+              <div class="receipt-left">
+                <%= link_to t("orders.reject"), backend_order_path(status: Settings.order.rejected), method: :put, class: "btn btn-danger", role: :button, data: {confirm: t("category.sure")} %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,8 +1,8 @@
 <tr>
-  <td><%= index_in_page order_counter, params[:page], Settings.per_category %></td>
-  <td><%= order.user_name %></td>
-  <td><%= order.status %></td>
-  <td><%= l order.created_at, format: :format_date %></td>
-  <td><%= number_to_currency order.total_price %></td>
-  <td class="text-center"><%= link_to t("orders.see_detail"), "#" %></td>
+  <td class="active"><%= index_in_page order_counter, params[:page], Settings.per_category %></td>
+  <td class="active"><%= order.user_name %></td>
+  <td class="<%= status_color order %> text-center"><%= order.status %></td>
+  <td class="active text-center"><%= l order.created_at, format: :format_date %></td>
+  <td class="active text-right text-danger"><%= number_to_currency order.total_price %></td>
+  <td class=" active text-center"><%= link_to t("orders.see_detail"), backend_order_path(order) %></td>
 </tr>
