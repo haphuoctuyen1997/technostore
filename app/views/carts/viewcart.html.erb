@@ -29,15 +29,14 @@
             <td>   </td>
             <td>   </td>
             <td>
-              <%= link_to root_path, :class => 'btn btn-default' do %>
+              <%= link_to root_path, class: "btn btn-default" do %>
                 <span class="glyphicon glyphicon-shopping-cart"></span> <%= t ".continue_shopping" %>
               <% end %>
             </td>
             <td>
-              <button type="button" class="btn btn-success">
-                <%= t ".checkout" %> <span class="glyphicon glyphicon-play"></span>
-              </button>
-
+              <%= link_to checkout_orders_path(total: @totals), :class => "btn btn-success", :id => "checkout" do %>
+                <span class="glyphicon glyphicon-play"></span> <%= t ".checkout" %>
+              <% end %>
             </td>
           </tr>
         </tbody>

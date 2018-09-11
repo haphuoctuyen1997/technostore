@@ -17,7 +17,11 @@ Rails.application.routes.draw do
   resources :users
   resources :products, only: :show
   resources :categories
-  resources :orders
+  resources :orders do
+    collection do
+      get "checkout"
+    end
+  end
   resources :carts do
     collection do
       get "addcart"

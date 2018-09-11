@@ -12,8 +12,10 @@ class CartsController < ApplicationController
 
   def viewcart
     total_price_cat = 0
-    session[:cart].each do |k|
-      total_price_cat += k["total_price"].to_f
+    unless session[:cart].empty?
+      session[:cart].each do |k|
+        total_price_cat += k["total_price"].to_f
+      end
     end
     @carts = session[:cart]
     respond_to do |format|

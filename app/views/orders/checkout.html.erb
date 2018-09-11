@@ -1,0 +1,69 @@
+<div class="container wrapper">
+  <div class="row cart-head">
+    <div class="container">
+      <div class="row">
+        <p></p>
+      </div>
+      <div class="row">
+        <div style="display: table; margin: auto;">
+          <%= link_to t(".cart"), viewcart_carts_path ,class: "check-bc btn btn-primary btn-submit"%>
+        </div>
+      </div>
+      <div class="row">
+        <p></p>
+      </div>
+    </div>
+  </div>
+  <div class="row cart-body col-lg-offset-4">
+    <%= form_for @order, method: :post do |f| %>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <span><i class="glyphicon glyphicon-lock"></i></span> <%= t ".secure_payment" %>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="col-md-12">
+                <strong><%= t ".fullname" %></strong>
+              </div>
+              <div class="col-md-12">
+                <%= f.text_field :receiver_name, class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <strong><%= t ".address" %></strong>
+              </div>
+              <div class="col-md-12">
+                <%= f.text_field :receiver_address, class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <strong><%= t ".phone" %></strong>
+              </div>
+              <div class="col-md-12">
+                <%= f.text_field :receiver_phone, class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <strong><%= t ".total" %></strong>
+              </div>
+              <div class="col-md-12">
+                <%= f.text_field :total_price, :value => params[:total], class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-6 col-sm-offset-4 col-xs-12">
+                <%= f.submit t(".submit"), class: "btn btn-primary btn-submit-fix" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
