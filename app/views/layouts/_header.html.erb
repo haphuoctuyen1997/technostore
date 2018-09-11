@@ -45,7 +45,7 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to t("order"), new_order_path, class: "glyphicon glyphicon-shopping-cart" %>
+              <%= link_to t("order"), viewcart_carts_path, class: "glyphicon glyphicon-shopping-cart" %>
             </li>
             <li class="right_to ">
               <a href="#" class="dropdown-toggle " data-toggle="dropdown">

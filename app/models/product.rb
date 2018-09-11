@@ -15,4 +15,8 @@ class Product < ApplicationRecord
 
   scope :top_order, ->{order(number_of_order: :desc).limit Settings.top_order}
   scope :newest, ->{order(created_at: :desc).limit Settings.product_recent}
+
+  def update_quantity old_quantity
+    update_attributes quantity: (quantity - old_quantity)
+  end
 end
