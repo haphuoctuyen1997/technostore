@@ -38,8 +38,11 @@ class Backend::CategoriesController < Backend::BaseController
   end
 
   def destroy
-    return unless @category.destroy
-    flash[:success] = t "category.destroy_success"
+    if @category.destroy
+      flash[:success] = t "category.destroy_success"
+    else
+      flash[:danger] = t "category.destroy_error"
+    end
     redirect_to backend_categories_path
   end
 

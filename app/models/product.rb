@@ -15,6 +15,10 @@ class Product < ApplicationRecord
 
   scope :top_order, ->{order(number_of_order: :desc).limit Settings.top_order}
   scope :newest, ->{order(created_at: :desc).limit Settings.product_recent}
+  scope :by_category, ->(category_id){where category_id: category_id if category_id.present?}
+  scope :by_name, ->(name){where "name LIKE ?", "%#{name}%" if name.present?}
+  scope :by_min_price, ->(min){where "price >= #{min}" if min.present?}
+  scope :by_max_price, ->(max){where "price <= #{max}" if max.present?}
 
   def update_quantity old_quantity
     update_attributes quantity: (quantity - old_quantity)

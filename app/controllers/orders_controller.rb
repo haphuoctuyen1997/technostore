@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
     end
   end
 
-private
+  private
   def order_params
     params.require(:order).permit :receiver_name, :receiver_address,
       :receiver_phone, :total_price, :address

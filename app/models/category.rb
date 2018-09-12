@@ -12,6 +12,7 @@ class Category < ApplicationRecord
   scope :search, ->(key) do where "name LIKE ?", "%#{key}%" end
   scope :find_parent, ->{where parent_id: 0}
   scope :find_child, ->(parent){where parent_id: parent.ids}
+  scope :select_category, ->{where.not id: Category.pluck("parent_id")}
 
   def parent_name
     return "null" if parent_id == Settings.category_roof
