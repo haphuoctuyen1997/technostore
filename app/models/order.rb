@@ -16,6 +16,7 @@ class Order < ApplicationRecord
   enum status: {pending: 0, accepted: 1, rejected: 2}
 
   scope :newest, ->{order created_at: :desc}
+  scope :feed_user_id, ->(id){where user_id: id}
 
   def caculate_tax tax_percent
     (total_price * tax_percent) / 100

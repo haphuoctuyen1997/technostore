@@ -150,6 +150,16 @@ en:
       phone: "Phone"
       total: "Total"
       submit: "Submit"
+    show:
+      ship: "Address Shipping"
+      receiver_name: "Receiver Name : "
+      receiver_address: "Receiver Address : "
+      receiver_phone: "Receiver Phone :"
+      date: "Date:"
+      mobile: "Mobile: "
+      email: "Email: "
+      address: "Address: "
+      status: "Status: "
   carts:
     notice: "Not enough quantity"
     show:

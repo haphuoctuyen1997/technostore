@@ -1,0 +1,89 @@
+<div class="row">
+  <div class="receipt-main col-xs-10 col-sm-10 col-md-8 col-xs-offset-1 col-sm-offset-1 col-md-offset-2">
+    <div class="row">
+      <div class="receipt-header">
+        <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="receipt-left">
+            <img class="img-responsive img_title_order" alt="iamgurdeeposahan" src="http://bootsnipp.com/img/avatars/bcf1c0d13e5500875fdd5a7e8ad9752ee16e7462.jpg" >
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+            <div class="receipt-right">
+              <h4><%= t "title_home" %></h4><br>
+              <p><%= t "t_phone" %><i class="fa fa-phone"></i></p>
+              <p><%= t "t_mail" %><i class="fa fa-envelope-o"></i></p>
+              <p><%= t "t_address" %><i class="fa fa-location-arrow"></i></p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="receipt-header receipt-header-mid">
+        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+          <div class="receipt-right">
+            <h4 class="text-danger"><%= current_user.name %></h4>
+            <p><b><%= t ".mobile" %></b><%= current_user.phone %></p>
+            <p><b><%= t ".email" %></b><%= current_user.email %></p>
+            <p><b><%= t ".address" %></b><%= current_user.address %></p>
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <div class="receipt-left">
+            <h2 class="text-primary"><%= t ".your_order" %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+        <table id="mytable" class="table table-bordred table-striped">
+          <thead>
+            <th><%= t ".order_code" %></th>
+            <th><%= t ".name_product" %></th>
+            <th><%= t ".qty" %></th>
+            <th><%= t ".price" %></th>
+            <th><%= t ".date_oder" %></th>
+          </thead>
+          <tbody>
+            <%= render @order_items %>
+          </tbody>
+        </table>
+    </div>
+    <div class="row">
+      <div class="receipt-header receipt-header-mid">
+        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+          <div class="receipt-right">
+            <h4 class="text-danger"><%= t ".ship" %></h4>
+            <p><b><%= t ".receiver_name" %></b><%= @order.receiver_name %></p>
+            <p><b><%= t ".receiver_address" %></b><%= @order.receiver_address %></p>
+            <p><b><%= t ".receiver_phone" %></b><%= @order.receiver_phone %></p>
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <div class="receipt-left">
+            <p>
+              <b><%= t ".status" %></b>
+              <i class="text-danger"><%= @order.status %></i>
+            </p>
+            <h2 class="text-primary"><%= t "total_price" %></h2>
+            <h3 class="text-danger">$<%= @order.total_price %></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="receipt-header receipt-header-mid receipt-footer">
+        <div class="col-xs-8 col-sm-8 col-md-8 text-left">
+          <div class="receipt-right">
+            <p><b><%= t ".date" %></b><%= day_format %></p>
+            <h5 class="text-muted"><%= t ".thank_you" %></h5>
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <div class="receipt-left">
+            <%= link_to t(".return_list"), orders_path, class: "btn btn-primary btn-lg" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

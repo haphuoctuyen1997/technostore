@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to t("##{order_item.order_id}"), order_path(order_item.order_id) %>
+  </td>
+  <td><%= order_item.product_name %></td>
+  <td><%= order_item.quantity %></td>
+  <td class="text-danger"><%= number_to_currency order_item.price %></td>
+  <td><%= created_at_format order_item.created_at %></td>
+</tr>
