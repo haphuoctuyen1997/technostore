@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :category_all, only: %i(index new show checkout)
+  before_action :category_all
 
   def index
     @orders = Order.feed_user_id(current_user.id)

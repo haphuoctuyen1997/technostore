@@ -6,7 +6,11 @@ class ProductsController < ApplicationController
                        .by_min_price(params[:min]).by_max_price(params[:max])
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+    @comments = Comment.includes(:user).newest.paginate page: params[:page],
+      per_page: Settings.per_page
+  end
 
   private
 

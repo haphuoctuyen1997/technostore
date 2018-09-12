@@ -20,6 +20,7 @@ en:
   add_to_cart: "Add to cart"
   detail_product: "Detail Product"
   view_cart: "View Cart"
+  b_comments: "comments"
   users:
     new:
       sign_up: "Sign Up"
@@ -176,3 +177,7 @@ en:
       brand_name: "Brand name"
       status: "Status :"
       in_stock: "In Stock"
+  comments:
+    form_comment:
+      text_comments: "Please enter a comment"
+  leaver: " Leave a Comment:"

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
 
   resources :suggests
+  resources :comments, only: :create
   resources :users
   resources :products
   resources :categories

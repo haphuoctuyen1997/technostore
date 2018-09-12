@@ -94,6 +94,13 @@ end
 
 end
 
+10.times do |n|
+  Comment.create!(content: "san pham tot",
+                  user_id: rand(1..3),
+                  product_id: rand(1..10))
+
+end
+
 Category.create!(name:  "cccccccccccc",
              parent_id: 1
              )
