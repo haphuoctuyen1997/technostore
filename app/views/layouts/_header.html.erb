@@ -16,8 +16,8 @@
         <ul class="nav navbar-nav">
           <li><%= link_to t("home"), root_path, class: "glyphicon glyphicon-home" %></li>
           <li><%= link_to t("help"), "#", class: "glyphicon" %></li>
-          <li>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu 1 <b class="caret"></b></a>
+          <li class="categories">
+          <a href="#" class="dropdown-toggle categories" data-toggle="dropdown"><%= t "categories" %><b class="caret"></b></a>
             <ul class="dropdown-menu multi-level">
             <% @categories.each do |f| %>
               <% if f.parent_id == 0 %>

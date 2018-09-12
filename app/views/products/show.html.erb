@@ -29,5 +29,22 @@
         </div>
       </div>
     </div>
+    <!-- the comment box -->
+    <div class="well">
+      <h4>
+        <i class="fa fa-paper-plane-o"></i><%= t "leaver" %>
+      </h4>
+     <div class="form-group">
+        <%= render partial: "comments/form_comment",
+          locals:{url: comments_path, comment: @comment, product: @product} %>
+      </div>
+      <!-- the comments -->
+      <div class="form-group">
+        <%= render @comments %>
+        <div>
+        <%= will_paginate @comments %>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

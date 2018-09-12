@@ -84,6 +84,10 @@ footer ul li {
 }
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: 222}
 .mainmenu-area .nav > li > a:focus {color: black}
+.categories .dropdown-toggle.categories{
+  padding-top: 25px;
+  font-size: 14px;
+}
 
 /*product detail*/
 .product-name {
@@ -481,4 +485,7 @@ div.row.view_cart{
 }
 .search-button {
   margin-top: 15px;
+}
+.dropdown-menu li{
+  list-style: none;
 }
