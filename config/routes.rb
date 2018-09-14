@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :users
     resources :requests
     resources :orders
+    resources :products do
+      collection {post :import}
+    end
   end
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
