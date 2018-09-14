@@ -13,11 +13,12 @@ class Backend::OrdersController < Backend::BaseController
   def show; end
 
   def update
-    status = if params[:status].to_i == Settings.order.accepted
-               :accepted
-             else
-               :rejected
-             end
+    if params[:status].to_i == Settings.order.accepted
+      status = :accepted
+    else
+      status = :rejected
+      process_rollback_qty
+    end
     return unless @order.send("#{status}!")
     flash.now[:success] = t "orders.#{status}"
     render :show
@@ -45,5 +46,18 @@ class Backend::OrdersController < Backend::BaseController
 
   def load_order_items
     @order_items = @order.order_items.includes :product
+  end
+
+  def process_rollback_qty
+    return if rollback_qty @order_items
+    flash.now[:danger] = t "orders.rollback_fail"
+    render :show
+  end
+
+  def rollback_qty order_items
+    order_items.each do |order_item|
+      product_qty = order_item.product_quantity + order_item.quantity
+      order_item.product.update_attributes quantity: product_qty
+    end
   end
 end
