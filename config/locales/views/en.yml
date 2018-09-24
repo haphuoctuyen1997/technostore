@@ -212,3 +212,5 @@ en:
     form_comment:
       text_comments: "Please enter a comment"
   leaver: " Leave a Comment:"
+  not_cart: "You have not added any products to your cart!"
+  count_comment: "Number of comments: 0"

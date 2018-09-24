@@ -84,8 +84,8 @@ User.create!(name:  "phuoctuyen",
              phone: "01219399936"
              )
 
-User.create!(name:  "duongtruong",
-             email: "duongtruong@gmail.com",
+User.create!(name:  "admin",
+             email: "admin@gmail.com",
              password: "foobar",
              password_confirmation: "foobar",
              role: 1,
@@ -93,8 +93,8 @@ User.create!(name:  "duongtruong",
              phone: "3454343242"
              )
 
-User.create!(name:  "vanle",
-             email: "phamvanle@gmail.com",
+User.create!(name:  "userhome",
+             email: "adminadmin@gmail.com",
              password: "123123",
              password_confirmation: "123123",
              role: 1,

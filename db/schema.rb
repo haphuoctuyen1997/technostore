@@ -55,9 +55,19 @@ ActiveRecord::Schema.define(version: 2018_08_28_091945) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.float "price"
+    t.float "promotion_price"
     t.integer "quantity"
     t.text "description"
     t.string "picture"
+    t.string "os"
+    t.string "cpu"
+    t.string "ram"
+    t.string "card"
+    t.string "hard_driver"
+    t.string "weight"
+    t.string "screens"
+    t.string "pin"
+    t.string "other_features"
     t.integer "number_of_order", default: 0
     t.integer "category_id"
     t.datetime "created_at", null: false

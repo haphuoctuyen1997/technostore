@@ -67,8 +67,9 @@ class Backend::ProductsController < Backend::BaseController
   private
 
   def product_params
-    params.require(:product).permit :name, :price, :quantity, :description,
-      :picture, :number_of_order, :category_id
+    params.require(:product).permit :name, :price, :promotion_price, :os, :cpu,
+      :ram, :card, :hard_driver, :weight, :screens, :pin, :other_features,
+      :quantity, :description, :picture, :number_of_order, :category_id
   end
 
   def load_categories

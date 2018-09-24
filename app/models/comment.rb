@@ -10,4 +10,5 @@ class Comment < ApplicationRecord
    length: {maximum: Settings.maximum.content}
 
   scope :newest, ->{order created_at: :desc}
+  scope :comment_product, ->(id){where(product_id: id)}
 end

@@ -9,8 +9,7 @@ class Product < ApplicationRecord
   validates :category_id, presence: true
   validates :name, presence: true, length: {maximum: Settings.maximum.name}
   validates :price, presence: true, numericality: true
-  validates :description, presence: true,
-    length: {maximum: Settings.maximum.description}
+  validates :description, presence: true
   validates :quantity, presence: true, numericality: {only_integer: true}
 
   mount_uploader :picture, PictureUploader
@@ -22,6 +21,7 @@ class Product < ApplicationRecord
   scope :search_by_key, ->(key) do
     where "name LIKE ? ", "%#{key}%"
   end
+  scope :comment_product, ->(id){where(product_id: id)}
   scope :of_category_id, ->(cat_id){where(category_id: cat_id)}
   scope :top_order, ->{order(number_of_order: :desc).limit Settings.top_order}
   scope :newest, ->{order(created_at: :desc).limit Settings.product_recent}

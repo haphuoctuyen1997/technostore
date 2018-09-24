@@ -10,11 +10,15 @@ class ProductsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = Comment.includes(:user).newest.paginate page: params[:page],
-      per_page: Settings.per_page
+    @comments = Comment.comment_product(@product.id).newest
+                       .paginate page: params[:page], per_page: Settings
+                .per_page
   end
 
   private
+  def paginate_comment
+    paginate page: params[:page], per_page: Settings.per_page
+  end
 
   def load_product
     @product = Product.find_by id: params[:id]

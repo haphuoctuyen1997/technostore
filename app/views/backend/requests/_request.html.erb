@@ -7,7 +7,7 @@
   <td class="center"><%= request.category.name %></td>
   <td class="abc">
     <a class="verify btn btn-default <%= request.accept? ? 'hidden' : '' %>"
-      data-id="<%= request.id %>" ><%= t ".verify" %></a>
+      data-id="<%= request.id %>" ><%= t ".approved" %></a>
     <a class="delete btn btn-default <%= request.accept? ? '' : 'hidden' %>"
       data-id="<%= request.id %>" ><%= t ".cancel" %></a>
   </td>

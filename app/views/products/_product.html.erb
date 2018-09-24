@@ -6,14 +6,16 @@
           <span class="fa fa-shopping-cart"></span>
         </button>
       </div>
-      <%= link_to image_tag("default.png"), product, class: "" %>
+      <div class="photo_bot">
+        <%= image_tag product.picture.url %>
+      </div>
     </div>
     <div class="info">
       <div class="row">
         <div class="price-details col-md-6">
           <div class="product_home">
             <p class="details">
-              <%= product.description %>
+              <%= product.other_features %>
             </p>
           </div>
           <div>

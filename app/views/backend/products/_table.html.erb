@@ -14,6 +14,7 @@
         <%= text_field_tag :search, nil, placeholder: t(".enter_name_category") %>
         <%= submit_tag t ".search" %>
       <% end %>
+      <%= link_to t(".create_product"), new_backend_product_path, class: "btn btn-success" %>
   </div>
 </div>
 <div class="row">
@@ -41,7 +42,6 @@
               <%= render @products %>
             </tbody>
           </table>
-          <%= link_to t(".create_product"), new_backend_product_path, class: "btn btn-success" %>
           <%= will_paginate %>
         </div>
       </div>

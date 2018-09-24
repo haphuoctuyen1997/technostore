@@ -1,51 +1,133 @@
-<section class="product-detail">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="product-image">
-          <%= image_tag @product.picture, alt: @product.picture, size: Settings.size.product_detail %>
-        </div>
-        <div class="product-ratting"></div>
-        <div class="product-comment"></div>
-      </div>
-      <div class="col-md-5 col-md-offset-1">
-        <div class="product-name">
-          <h3><%= @product.name %></h3>
-          <div class="category">
-            <%= link_to @product.category_name, "#" %>
+  <div class="container">
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1">
+              <%= image_tag @product.picture.url, alt: @product.picture, size: Settings.size.product_detail %>
+              </div>
+              <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+              <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
+              <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
+              <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+            </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+              <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+              <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+              <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+              <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+            </ul>
+          </div>
+          <div class="details col-md-6">
+            <h3 class="product-title"><%= @product.name %></h3>
+            <h4 class="product-title"><%= link_to @product.category_name, "#" %></h4>
+            <div class="rating">
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <span class="text-warning">41 reviews</span>
+            </div>
+            <h4 class="text-secondary">Current price: <span class="text-danger"><%= number_to_currency @product.price %></span></h4>
+            <% if @product.promotion_price.present? %>
+            <h4 class="text-secondary">Promotion price: <span class="text-danger"><%= number_to_currency @product.promotion_price %></span></h4>
+            <% end %>
+            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+            <div>
+              <h4 class="text-primary">Specifications</h4>
+              <table>
+                  <tbody><tr>
+                    <td><b class="text-success">Os</b></td>
+                    <td>:</td>
+                    <td><%= @product.os %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Cpu</b></td>
+                    <td>:</td>
+                    <td><%= @product.cpu %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Ram</b></td>
+                    <td>:</td>
+                    <td><%= @product.ram %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Card</b></td>
+                    <td>:</td>
+                    <td><%= @product.card %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Hard Drive</b></td>
+                    <td>:</td>
+                    <td><%= @product.hard_driver %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Weigth</b></td>
+                    <td>:</td>
+                    <td><%= @product.weight %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Screens</b></td>
+                    <td>:</td>
+                    <td><%= @product.screens %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Pin</b></td>
+                    <td>:</td>
+                    <td><%= @product.pin %></td>
+                  </tr>
+                  <tr>
+                    <td><b class="text-success">Other feature</b></td>
+                    <td>:</td>
+                    <td><%= @product.other_features %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="action">
+              <a class="addcart btn btn-warning btn-lg" data-id="<%= @product.id %>"><%= t "button.add_to_cart" %></a>
+              <button class="like btn btn-default" type="button">View full specifications</button>
+            </div>
           </div>
         </div>
-        <div class="product-description">
-          <%= @product.description %>
+        <div class="row">
+          <div class="panel panel-default description_detail">
+            <div class="panel-body">
+              <h4>Highlights</h4><p><b><%= t ".date" %></b><%= day_format %></p>
+                <p><%= @product.description %></p>
+            </div>
+          </div>
         </div>
-        <div class="product-price">
-          <h3><%= number_to_currency @product.price %></h3>
-        </div>
-        <div class="product-add-to-cart">
-          <a class="addcart btn btn-warning btn-lg" data-id="<%= @product.id %>"><%= t "button.add_to_cart" %></a>
-        </div>
-      </div>
-    </div>
-    <!-- the comment box -->
-    <div class="well">
-      <h4>
-        <i class="fa fa-paper-plane-o"><%= t "leaver" %></i>
-      </h4>
-      <% if logged_in? %>
-        <div class="form-group">
-          <%= render partial: "comments/form_comment",
-            locals:{url: comments_path, comment: @comment, product: @product} %>
-        </div>
-      <% else %>
-        <div class="form-group"></div>
-      <% end %>
-      <!-- the comments -->
-      <div class="form-group">
-        <%= render @comments %>
-        <div>
-        <%= will_paginate @comments %>
+        <!-- the comment box -->
+        <div class="well">
+          <h4>
+            <i class="fa fa-paper-plane-o"><%= t "leaver" %></i>
+          </h4>
+          <% if logged_in? %>
+            <div class="form-group">
+              <%= render partial: "comments/form_comment",
+                locals:{url: comments_path, comment: @comment, product: @product} %>
+            </div>
+          <% else %>
+            <div class="form-group"></div>
+          <% end %>
+          <!-- the comments -->
+          <div class="form-group">
+            <h4>
+              <%= t "count_comment" %>
+            </h4>
+            <%= render @comments %>
+            <div>
+
+            <%= will_paginate @comments %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
