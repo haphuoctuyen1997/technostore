@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'images/delete'
+
+  root "posts#index"
+  resources :posts
+  resources :images, only: [:destroy]
+
+  get 'posts/index'
   root "static_pages#home"
   namespace :backend do
     get "/", to: "static_page#index"
