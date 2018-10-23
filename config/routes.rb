@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  get 'images/new'
   get 'images/delete'
 
-  root "posts#index"
   resources :posts
   resources :images, only: [:destroy]
 
