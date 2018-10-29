@@ -1,7 +1,7 @@
 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 product_recent">
   <div class="my-list">
     <div class="product_top_img">
-      <%= image_tag product_recent.picture.url %>
+      <%= image_tag product_recent.picture_url %>
       <h3><%= product_recent.other_features %></h3>
     </div>
     <div class="product_top">
@@ -9,7 +9,7 @@
       <span class="pull-right text-danger"><%= number_to_currency product_recent.price %></span>
     </div>
     <div class="detail">
-      <p><%= product_recent.name %></p>
+      <h5><b><%= product_recent.name %></b></h5>
       <%= image_tag product_recent.picture.url %>
       <!-- <%= image_tag("default.png") %> -->
       <a class="addcart btn btn-info" data-id="<%= product_recent.id %>"><%= t ".add_to_cart" %></a>

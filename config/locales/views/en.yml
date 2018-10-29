@@ -19,7 +19,7 @@ en:
   title_home: "Techno Store"
   t_address: "Da Nang - Viet Nam "
   t_phone: "+84 123456789 "
-  t_mail: "techno_store.framgia@gmail.com "
+  t_mail: " techno_store@gmail.com "
   add_to_cart: "Add to cart"
   detail_product: "Detail Product"
   view_cart: "View Cart"
@@ -109,7 +109,7 @@ en:
       phone: " +00 1515151515"
       mail: " myemail@something.com"
     footer:
-      text_footer: "DESIGN BY 2018 FRAMGIA"
+      text_footer: "DESIGN BY 2018"
   suggests:
     new:
       suggest_title: "Suggest"

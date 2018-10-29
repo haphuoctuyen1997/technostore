@@ -1,15 +1,36 @@
+<%= form_with model: post, local: true do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-<%= form_for(@post, html: {multipart: true}) do |f| %>
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <%= f.fields_for :image do |p| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <%= form.fields_for :images do |p| %>
     <div class="field">
       <%= p.label :photo %><br>
-      <%= p.file_field :photo, multiple: true, name: "image[photo][]", class: "upload-image" %>
+      <%= p.text_field :description %>
+      <%= p.file_field :photo, multiple: true, name: "images[photo][]", class: "upload-image" %>
     </div>
   <% end %>
   <div id="preview"></div>
 
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= form.submit %>
   </div>
 <% end %>

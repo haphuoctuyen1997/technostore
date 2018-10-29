@@ -1,9 +1,10 @@
 class CreateImages < ActiveRecord::Migration[5.2]
   def change
     create_table :images do |t|
-      t.string :name
-      t.references :product, foreign_key: true
-      t.references :post, foreign_key: true
+      t.integer :post_id
+      t.integer :product_id
+      t.string :photo
+      t.text :description
 
       t.timestamps
     end
