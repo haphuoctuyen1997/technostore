@@ -186,7 +186,6 @@ GEM
     parallel (1.12.1)
     parser (2.5.1.2)
       ast (~> 2.4.0)
-    pg (0.19.0)
     powerpack (0.1.2)
     public_suffix (3.0.3)
     puma (3.12.0)
@@ -316,7 +315,6 @@ DEPENDENCIES
   less-rails-bootstrap
   listen (>= 3.0.5, < 3.2)
   mini_magick (~> 4.8)
-  pg (~> 0.19.0)
   puma (~> 3.7)
   rails (~> 5.2.1)
   rails-assets-sweetalert2!
@@ -336,7 +334,7 @@ DEPENDENCIES
   will_paginate (= 3.1.6)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.4
+   1.17.2
