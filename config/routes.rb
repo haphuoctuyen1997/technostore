@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'images/new'
-  get 'images/delete'
 
-  resources :posts
-  resources :images, only: [:destroy]
-
-  get 'posts/index'
   root "static_pages#home"
   namespace :backend do
     get "/", to: "static_page#index"
@@ -27,6 +21,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/signup", to: "users#new"
 
+  resources :account_activations, only: [:edit]
+  resources :posts
+  resources :images, only: [:destroy]
   resources :suggests
   resources :comments, only: :create
   resources :users

@@ -28,6 +28,9 @@ class Backend::ProductsController < Backend::BaseController
     product_params[:number_of_order] = Settings.number_order
     @product = Product.new product_params
     if @product.save
+      params[:images]['photo'].each do |a|
+        @image = @product.images.create!(:photo => a)
+      end
       flash[:success] = t ".create_success"
       redirect_to backend_products_path
     else
@@ -35,21 +38,6 @@ class Backend::ProductsController < Backend::BaseController
       render :new
     end
   end
-
-  # def create
-  #   @product = Product.new(product_params)
-
-  #   respond_to do |format|
-  #     if @product.save
-  #       params[:images_attributes] do |a|
-  #         @item_photo = @product.images.create!(:name => a)
-  #       end
-  #       format.html { redirect_to @product, notice: 'Item was successfully created.' }
-  #     else
-  #       format.html { render :new }
-  #     end
-  #   end
-  # end
 
   def edit; end
 
@@ -91,7 +79,7 @@ class Backend::ProductsController < Backend::BaseController
   def product_params
     params.require(:product).permit :name, :price, :promotion_price, :os, :cpu,
       :ram, :card, :hard_driver, :weight, :screens, :pin, :other_features,
-      :quantity, :description, :picture, :number_of_order, :category_id, images_attributes: [:id, :post_id, :product_id, :name]
+      :quantity, :description, :picture, :number_of_order, :category_id, images_attributes: [:id, :post_id, :product_id, :photo , :description]
   end
 
   def load_categories
