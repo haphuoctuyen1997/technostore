@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="photo_bot">
-        <%= image_tag product.picture.url %>
+        <%= link_to image_tag(product.picture.url), product, class: "" %>
       </div>
     </div>
     <div class="info">
@@ -19,8 +19,8 @@
             </p>
           </div>
           <div>
-            <h1><%= product.name %></h1>
-            <span class="price-new text-danger"><%= number_to_currency product.price %></span><br>
+            <h1><b><%= product.name %></b></h1>
+            <span class="pull-right text-danger"><b><%= number_to_currency product.price %></b></span><br>
           </div>
           <div class="separator clear-left">
             <p class="btn-add">

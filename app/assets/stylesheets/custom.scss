@@ -12,6 +12,9 @@ $black-gray: #222;
 $e-gray: #eaeaea;
 $red-green: #ff6600;
 $blu-green: #484848;
+p a:hover {
+  color: black
+}
 section {
   overflow: auto;
 }
@@ -561,30 +564,6 @@ div.row.view_cart{
   padding: 3em;
   line-height: 1.5em; }
 
-@media screen and (min-width: 997px) {
-  .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; } }
-
-.details {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.colors {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
 .product-title, .price, .sizes, .colors {
   text-transform: UPPERCASE;
   font-weight: bold; }
@@ -603,37 +582,30 @@ div.row.view_cart{
   .size:first-of-type {
     margin-left: 40px; }
 
-.color {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-  height: 2em;
-  width: 2em;
-  border-radius: 2px; }
-  .color:first-of-type {
-    margin-left: 20px; }
-
-
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
 .description_detail{
   margin-top: 25px;
+}
+
+.modal-open .gal-item button.close{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #000;
+    opacity: 1;
+    color: #fff;
+    z-index: 999;
+    right: -12px;
+    top: -12px;
+    border-radius: 50%;
+    font-size: 15px;
+    border: 2px solid #fff;
+    line-height: 25px;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,0.35);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.35);
+}
+.description_image h4{
+  color: white
+}
+.pane_image_to{
+  margin-top: 15px
 }
