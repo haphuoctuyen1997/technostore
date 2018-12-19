@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><b><%= @post.title %></b></h2>
+  <h4><%= created_at_format @post.created_at %></h4>
+</p>
+
+<p class="image_post">
+<% @images.each do |p| %>
+  <%= image_tag p.photo_url %>
+  <!-- <%= link_to "Destroy", image_path(p), method: :delete %> -->
+<% end %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= raw @post.description %>
+</p>
+
+<%= link_to "Back", posts_path %>

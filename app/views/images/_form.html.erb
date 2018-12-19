@@ -1,0 +1,14 @@
+
+<%= form_for(@post, html: {multipart: true}) do |f| %>
+  <%= f.fields_for :image do |p| %>
+    <div class="field">
+      <%= p.label :photo %><br>
+      <%= p.file_field :photo, multiple: true, name: "image[photo][]", class: "upload-image" %>
+    </div>
+  <% end %>
+  <div id="preview"></div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

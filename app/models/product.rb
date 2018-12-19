@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :rattings, dependent: :destroy
   has_many :order_items, dependent: :destroy
+  has_many :images
+  accepts_nested_attributes_for :images
 
   validates :category_id, presence: true
   validates :name, presence: true, length: {maximum: Settings.maximum.name}
