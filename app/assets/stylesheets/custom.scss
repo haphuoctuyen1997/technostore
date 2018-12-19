@@ -228,6 +228,8 @@ footer ul li {
   border: 1px solid #E1E1E1;
   background: #FFF;
   margin-bottom:12px;
+  width:263px;
+  height:335px;
 }
 .col-item .options {
   position:absolute;
@@ -378,8 +380,8 @@ img{max-width:100%;}
   padding-bottom: 5px;
 }
 .my-list .product_top_img img{
-  width: 100%;
   height: 160px;
+  width: 100%;
 }
 .my-list .product_top {
   width: auto;
@@ -608,4 +610,10 @@ div.row.view_cart{
 }
 .pane_image_to{
   margin-top: 15px
+}
+
+/*news*/
+.card .card-body img{
+  width: 200px;
+  height: 200px;
 }

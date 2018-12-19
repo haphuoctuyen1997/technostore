@@ -1,8 +1,10 @@
 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 product_recent">
   <div class="my-list">
     <div class="product_top_img">
-      <%= image_tag product_recent.picture_url %>
-      <h3><%= product_recent.other_features %></h3>
+      <%= image_tag product_recent.picture_url||default.png %>
+      <div>
+        <h3><%= product_recent.other_features %></h3>
+      </div>
     </div>
     <div class="product_top">
       <span><%= product_recent.name %></span>
@@ -10,10 +12,16 @@
     </div>
     <div class="detail">
       <h5><b><%= product_recent.name %></b></h5>
-      <%= image_tag product_recent.picture.url %>
-      <!-- <%= image_tag("default.png") %> -->
-      <a class="addcart btn btn-info" data-id="<%= product_recent.id %>"><%= t ".add_to_cart" %></a>
-      <%= link_to t(".detail_product"), product_recent, class: "btn btn-info" %>
+      <div>
+        <%= image_tag product_recent.picture.url||default.png %>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <a class="addcart btn btn-info" data-id="<%= product_recent.id %>"><%= t ".add_to_cart" %></a>
+        </div>
+        <div class="col-md-6">
+          <%= link_to t(".detail_product"), product_recent, class: "btn btn-success btn-product" %></div>
+      </div>
     </div>
   </div>
 </div>

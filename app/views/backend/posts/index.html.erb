@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>News the day</h1>
+
+<table>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><b><%= post.title %></b></td>
+        <td><%= link_to "Show", post_path(post) %></td>
+        <td><%= link_to "Edit", edit_backend_post_path(post) %></td>
+        <td><%= link_to "Destroy", backend_post_path(post), method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New Post", new_backend_post_path %>

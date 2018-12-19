@@ -21,11 +21,12 @@ en:
       slidebar:
         dashboard: "Dashboard"
         charts: "Charts"
-        manager_user: "Manager user"
-        manager_category: "Manager category"
-        manager_product: "Manager product"
-        manager_order: "Manager order"
-        manager_request: "Manager request"
+        manager_user: " Manager user"
+        manager_category: " Manager category"
+        manager_product: " Manager product"
+        manager_order: " Manager order"
+        manager_request: " Manager request"
+        manager_posts: " Manager posts"
     users:
       form:
         edit_user: "Edit User"

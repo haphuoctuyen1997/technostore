@@ -15,7 +15,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><%= link_to t("home"), root_path, class: "glyphicon glyphicon-home" %></li>
-          <li><%= link_to t("help"), "#", class: "glyphicon" %></li>
+          <li><%= link_to t("help"), posts_path, class: "glyphicon" %></li>
           <li class="categories">
           <a href="#" class="dropdown-toggle categories" data-toggle="dropdown"><%= t "categories" %><b class="caret"></b></a>
             <ul class="dropdown-menu multi-level">
@@ -27,7 +27,7 @@
                       <% @categories.each do |child| %>
                           <% if child.parent_id == f.id %>
                             <li class="dropdown-submenu">
-                              <a href="products?utf8=✓&name=&min=&max=&category=<%= child.id %>"><%= child.name %></a>
+                              <a href="products?utf8=✓&category=<%= child.id %>"><%= child.name %></a>
                                <ul class="bg-info" >
                                 <% @categories.each do |item| %>
                                     <% if item.parent_id == child.id %>

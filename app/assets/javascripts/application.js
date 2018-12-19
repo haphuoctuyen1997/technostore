@@ -20,3 +20,4 @@
 //= require i18n/translations
 //= require custom
 //= require cart
+//= require ckeditor/init
