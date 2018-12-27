@@ -27,3 +27,4 @@
 //= require backend/users
 //= require backend/preview_images
 //= require turbolinks
+//= require ckeditor/init

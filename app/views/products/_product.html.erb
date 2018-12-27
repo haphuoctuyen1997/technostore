@@ -18,13 +18,14 @@
               <%= product.other_features %>
             </p>
           </div>
-          <div>
-            <h1><b><%= product.name %></b></h1>
-            <span class="pull-right text-danger"><b><%= number_to_currency product.price %></b></span><br>
+          <div class="name_product_home">
+            <h1>
+              <b><%= link_to product.name, product, class: "" %></b>
+            </h1>
           </div>
           <div class="separator clear-left">
             <p class="btn-add">
-              <i class="fa fa-shopping-cart"></i><a href="#" class="hidden-sm"><%= t".view_cart" %></a>
+              <i class="fa fa-shopping-cart"></i><a href="#" class="text-danger"><b><%= number_to_currency product.price %></b></a>
             </p>
             <p class="btn-details">
               <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Add to wish list"><i class="fa fa-heart"></i></a>

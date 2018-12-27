@@ -2,8 +2,8 @@ en:
   number:
      currency:
         format:
-          format: "%u%n"
-          unit: "$"
+          format: "%n%u"
+          unit: "₫"
   time:
     formats:
       format_date: "%d/%m/%Y"
@@ -84,8 +84,8 @@ en:
     filter_by: "Filter by"
     category:  "Category:"
     all: "All category"
-    min: "Min price ($)"
-    max: "Max price ($)"
+    min: "Min price (₫)"
+    max: "Max price (₫)"
     name: "Product's name"
     all_product: "All product for your result:"
     not_found: "Not found product for your search!"

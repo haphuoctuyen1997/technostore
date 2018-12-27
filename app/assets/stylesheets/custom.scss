@@ -229,7 +229,6 @@ footer ul li {
   background: #FFF;
   margin-bottom:12px;
   width:263px;
-  height:335px;
 }
 .col-item .options {
   position:absolute;
@@ -351,12 +350,14 @@ footer ul li {
   margin-right:12px;
 }
 .col-item .price-details .product_home {
-  height: 80px;
+  height: 60px;
 }
 .col-item .price-details .product_home p {
   text-align: center;
 }
-
+.col-item .price-details .name_product_home {
+  height: 30px;
+}
 /* custom product_recent */
 img{max-width:100%;}
   *{transition: all .5s ease;-moz-transition: all .5s ease;-webkit-transition: all .5s ease}
@@ -386,7 +387,6 @@ img{max-width:100%;}
 .my-list .product_top {
   width: auto;
   height: 50px;
-  padding-top: 18px;
 }
 .my-list h3{
     text-align: left;
