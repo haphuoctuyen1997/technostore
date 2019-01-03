@@ -1,4 +1,4 @@
-<div class="col-sm-3">
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 product_recent">
   <article class="col-item">
     <div class="photo">
       <div class="options-cart-round">
@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="photo_bot">
-        <%= image_tag product.picture.url %>
+        <%= link_to image_tag(product.picture.url||default.png), product, class: "" %>
       </div>
     </div>
     <div class="info">
@@ -18,13 +18,14 @@
               <%= product.other_features %>
             </p>
           </div>
-          <div>
-            <h1><%= product.name %></h1>
-            <span class="price-new text-danger"><%= number_to_currency product.price %></span><br>
+          <div class="name_product_home">
+            <h1>
+              <b><%= link_to product.name, product, class: "" %></b>
+            </h1>
           </div>
           <div class="separator clear-left">
             <p class="btn-add">
-              <i class="fa fa-shopping-cart"></i><a href="#" class="hidden-sm"><%= t".view_cart" %></a>
+              <i class="fa fa-shopping-cart"></i><a href="#" class="text-danger"><b><%= number_to_currency product.price %></b></a>
             </p>
             <p class="btn-details">
               <a href="#" class="hidden-sm" data-toggle="tooltip" data-placement="top" title="Add to wish list"><i class="fa fa-heart"></i></a>

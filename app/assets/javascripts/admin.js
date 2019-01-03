@@ -25,4 +25,6 @@
 //= require i18n.js
 //= require i18n/translations
 //= require backend/users
+//= require backend/preview_images
 //= require turbolinks
+//= require ckeditor/init

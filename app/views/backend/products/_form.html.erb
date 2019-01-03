@@ -1,9 +1,11 @@
 <div class="panel-body">
   <div class="row">
-    <%= form_for [:backend, @product], :html => {:class => "form-horizontal", "data-bar" => "baz"} do |f| %>
+
+    <%= form_with model: [:backend, @product], local: true do |f| %>
+
       <%= render "shared/error_messages", object: f.object %>
       <div class="col-xs-12">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <div class="col-md-12">
             <div class="form-group">
               <%= label_tag t ".name" %>
@@ -22,62 +24,92 @@
               <%= f.text_field :quantity, class: "form-control" %>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "os", "OS" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :os, class: "form-control", placeholder: "Enter os" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= f.fields_for :images do |p| %>
+                <div class="field">
+                  <%= p.label :photo %><br>
+
+                  <%= p.file_field :photo, multiple: true, name: "images[photo][]", class: "upload-image" %>
+                </div>
+              <% end %>
+            <div id="preview"></div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "cpu", "CPU" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :cpu, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "os", "OS" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :os, class: "form-control", placeholder: "Enter os" %>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "ram", "Ram" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :ram, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "cpu", "CPU" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :cpu, class: "form-control", placeholder: "Enter" %>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "card", "Card" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :card, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "ram", "Ram" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :ram, class: "form-control", placeholder: "Enter" %>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "hard_drive", "Hard drive" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :hard_driver, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "card", "Card" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :card, class: "form-control", placeholder: "Enter" %>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "weight", "Weight" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :weight, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "hard_drive", "Hard drive" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :hard_driver, class: "form-control", placeholder: "Enter" %>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "screens", "Screens" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :screens, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "weight", "Weight" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :weight, class: "form-control", placeholder: "Enter" %>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "pin", "Pin" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :pin, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "screens", "Screens" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :screens, class: "form-control", placeholder: "Enter" %>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <%= label_tag "other_features", "Other feature" , class: "control-label col-md-3" %>
-            <div class="col-md-9">
-              <%= f.text_field :other_features, class: "form-control", placeholder: "Enter" %>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "pin", "Pin" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :pin, class: "form-control", placeholder: "Enter" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= label_tag "other_features", "Other feature" , class: "control-label col-md-3" %>
+              <div class="col-md-9">
+                <%= f.text_field :other_features, class: "form-control", placeholder: "Enter" %>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-7">
           <div class="col-md-12">
             <div class="form-group">
               <%= label_tag t ".category" %>
@@ -97,9 +129,9 @@
             </div>
           </div>
           <div class="col-md-12">
-            <div class="form-group description">
+            <div class="form-group">
               <%= label_tag t ".description" %>
-              <%= f.text_area :description, class: "form-control", placeholder: "Please enter a description for the product" %>
+              <%= f.cktext_area :description, class: "form-control", placeholder: "Please enter a description for the product" %>
             </div>
           </div>
         </div>
