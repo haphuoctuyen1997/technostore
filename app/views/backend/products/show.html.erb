@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>qwertyuiqwertytrewwertyu</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<% @item_product.each do |p| %>
+  <%= image_tag p.name, style: "max-width: 200px; max-height: 200px" %>
+  <%= link_to "Destroy", item_photo_path(p), method: :delete %>
+<% end %>

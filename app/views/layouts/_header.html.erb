@@ -27,7 +27,7 @@
                       <% @categories.each do |child| %>
                           <% if child.parent_id == f.id %>
                             <li class="dropdown-submenu">
-                              <a href="#"><%= child.name %></a>
+                              <a href="products?utf8=✓&name=&min=&max=&category=<%= child.id %>"><%= child.name %></a>
                                <ul class="bg-info" >
                                 <% @categories.each do |item| %>
                                     <% if item.parent_id == child.id %>
